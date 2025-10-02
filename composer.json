@@ -1,0 +1,21 @@
+{
+    "name": "julius/butler",
+    "description": "",
+    "type": "webapplication",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Julius Derigs",
+            "email": "derigs@pangio.de"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "ext-pdo": "*",
+        "symfony/yaml": "^7.3"
+    }
+,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    }
+}
