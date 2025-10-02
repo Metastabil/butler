@@ -27,4 +27,15 @@ class BaseModel {
         $this->database_instance = new Database();
         $this->db = $this->database_instance->connect();
     }
+
+    /**
+     * @param string $folder
+     * @param string $file
+     * @return string
+     */
+    protected function query(string $folder, string $file) :string {
+        $path = dirname(__DIR__) . "/sql/$folder/$file.sql";
+
+        return file_get_contents($path);
+    }
 }
