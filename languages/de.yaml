@@ -11,6 +11,15 @@ actions:
 navigation:
   recipes: 'Rezepte'
   users: 'Benutzer'
+messages:
+  success:
+    save: 'Erfolgreich gespeichert'
+    update: 'Erfolgreich aktualisiert'
+    delete: 'Erfolgreich gelöscht'
+  error:
+    save: 'Fehler beim Speichern'
+    update: 'Fehler beim Aktualisieren'
+    delete: 'Fehler beim Löschen'
 recipes:
   titles:
     index: 'Übersicht der Rezepte'
