@@ -20,6 +20,10 @@ messages:
     save: 'Fehler beim Speichern'
     update: 'Fehler beim Aktualisieren'
     delete: 'Fehler beim Löschen'
+log:
+  create: 'Anlegen'
+  update: 'Bearbeiten'
+  delete: 'Löschen'
 recipes:
   titles:
     index: 'Übersicht der Rezepte'
