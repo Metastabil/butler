@@ -22,6 +22,7 @@ messages:
     update: 'Fehler beim Aktualisieren'
     delete: 'Fehler beim Löschen'
     credentials: 'Unbekannte Benutzerdaten'
+
 log:
   create: 'Anlegen'
   update: 'Bearbeiten'

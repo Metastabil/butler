@@ -82,7 +82,8 @@ main {
     color: var(--dark-red);
 }
 
-.default-form input {
+.default-form input,
+.default-form textarea {
     font: 400 normal 18px 'Rubik', sans-serif;
     border-radius: 10px;
     outline: none;
@@ -120,4 +121,14 @@ main {
 .history {
     color: var(--white);
     text-align: center;
+}
+
+.trumbowyg-box,
+.trumbowyg-editor {
+    background-color: var(--white);
+    font: 400 normal 18px 'Rubik', sans-serif;
+    overflow-y: auto;
+    height: 200px;
+    white-space: normal;      /* normale Zeilenumbrüche */
+    word-wrap: break-word;
 }

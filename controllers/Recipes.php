@@ -69,6 +69,13 @@ class Recipes extends BaseController {
             $file_content = file_get_contents($file_tmp_path);
             $base64_string = base64_encode($file_content);
 
+            $max_size = 2 * 1024 * 1024; // 2 MB
+            if ($_FILES['image']['size'] > $max_size) {
+                set_msg('Datei ist zu groß! Maximal 2 MB erlaubt.', 'error');
+
+                redirect('recipes');
+            }
+
             $input = [
                 'name' => $this->request->get('name'),
                 'ingredients' => $this->request->get('ingredients'),

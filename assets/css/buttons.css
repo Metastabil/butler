@@ -39,3 +39,7 @@
 .btn-icon-delete {
     color: var(--light-red);
 }
+
+.btn-create {
+    margin: 25px 0 0 0;
+}
