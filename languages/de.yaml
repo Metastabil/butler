@@ -22,7 +22,6 @@ messages:
     update: 'Fehler beim Aktualisieren'
     delete: 'Fehler beim Löschen'
     credentials: 'Unbekannte Benutzerdaten'
-
 log:
   create: 'Anlegen'
   update: 'Bearbeiten'
@@ -37,6 +36,8 @@ recipes:
     create: 'Rezept anlegen'
     update: 'Rezept bearbeiten'
     show: 'Rezept anzeigen'
+    ingredients: 'Zutaten'
+    description: 'Beschreibung'
   attributes:
     name: 'Name'
     ingredients: 'Zutaten'

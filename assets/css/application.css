@@ -21,6 +21,7 @@ header {
 }
 
 nav {
+    box-shadow: 0 0 10px var(--black);
     background-color: var(--dark-blue);
     padding: 10px;
     width: 100%;
@@ -127,8 +128,23 @@ main {
 .trumbowyg-editor {
     background-color: var(--white);
     font: 400 normal 18px 'Rubik', sans-serif;
+    word-wrap: break-word;
+    white-space: normal;
     overflow-y: auto;
     height: 200px;
-    white-space: normal;      /* normale Zeilenumbrüche */
-    word-wrap: break-word;
+}
+
+.image {
+    box-shadow: 0 0 10px var(--black);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    margin: 0 0 25px 0;
+    height: 200px;
+    width: 100%;
+}
+
+.ingredients,
+.description {
+    color: var(--white);
 }
