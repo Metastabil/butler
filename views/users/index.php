@@ -11,7 +11,12 @@
 <table class="default-table">
     <?php foreach ($elements as $element) : ?>
         <tr onclick="window.location.href='<?= esc(base_url('show-user/' . $element['id'])) ?>'">
-            <td><?= $element['username'] ?></td>
+            <td class="icon">
+                <i class="fa-solid fa-user"></i>
+            </td>
+            <td>
+                <?= $element['username'] ?>
+            </td>
         </tr>
     <?php endforeach ?>
 </table>
