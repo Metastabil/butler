@@ -31,3 +31,11 @@
 .btn-red:hover {
     background-color: var(--dark-red);
 }
+
+.btn-icon-update {
+    color: var(--light-green);
+}
+
+.btn-icon-delete {
+    color: var(--light-red);
+}

@@ -5,6 +5,16 @@
  */
 ?>
 
+<div class="options-wrapper">
+    <a href="<?= base_url('update-user/' . $element['id']) ?>" class="btn btn-icon-update">
+        <i class="fa-solid fa-pen-to-square"></i>
+    </a>
+
+    <a href="javascript:void(0)" class="btn btn-icon-delete">
+        <i class="fa-solid fa-trash-can"></i>
+    </a>
+</div>
+
 <form action="javascript:void(0)" method="post" class="default-form">
     <div class="input-wrapper">
         <label for="username">
@@ -22,6 +32,7 @@
     </div>
 </form>
 
+<!-- History -->
 <h3 class="subtitle"><?= LANG->pages->titles->history ?></h3>
 
 <p class="history">
