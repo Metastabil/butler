@@ -20,10 +20,14 @@ messages:
     save: 'Fehler beim Speichern'
     update: 'Fehler beim Aktualisieren'
     delete: 'Fehler beim Löschen'
+    credentials: 'Unbekannte Benutzerdaten'
 log:
   create: 'Anlegen'
   update: 'Bearbeiten'
   delete: 'Löschen'
+pages:
+  titles:
+    login: 'Anmelden'
 recipes:
   titles:
     index: 'Übersicht der Rezepte'
