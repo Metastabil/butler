@@ -145,6 +145,10 @@ class Users extends BaseController {
                    ->render('templates/footer');
     }
 
+    /**
+     * @param int $id
+     * @return void
+     */
     #[NoReturn] public function delete(int $id) :void {
         $element = $this->user_model->select($id);
         $input = [
