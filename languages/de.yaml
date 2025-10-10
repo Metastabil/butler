@@ -1,0 +1,37 @@
+project: 'Butler'
+actions:
+  create: 'Neu anlegen'
+  save: 'Speichern'
+  show: 'Anzeigen'
+  update: 'Bearbeiten'
+  delete: 'Löschen'
+  cancel: 'Abbrechen'
+  login: 'Anmelden'
+  logout: 'Abmelden'
+navigation:
+  recipes: 'Rezepte'
+  users: 'Benutzer'
+recipes:
+  titles:
+    index: 'Übersicht der Rezepte'
+    create: 'Neues Rezept anlegen'
+    update: 'Rezept bearbeiten'
+    show: 'Rezept anzeigen'
+  attributes:
+    name: 'Name'
+    ingredients: 'Zutaten'
+    description: 'Beschreibung'
+    image: 'Bild'
+    created: 'Angelegt am'
+    updated: 'Aktualisiert am'
+users:
+  titles:
+    index: 'Übersicht der Benutzer'
+    create: 'Neuen Benutzer anlegen'
+    update: 'Benutzer bearbeiten'
+    show: 'Benutzer anzeigen'
+  attributes:
+    username: 'Benutzername'
+    password: 'Passwort'
+    created: 'Angelegt am'
+    updated: 'Aktualisiert am'
