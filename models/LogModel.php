@@ -21,7 +21,8 @@ class LogModel extends BaseModel {
         $query = $this->query($this->folder, 'select-by-table-and-record-id');
         $params = [
             'table_name' => $table,
-            'record_id' => $record_id
+            'record_id' => $record_id,
+            'deleted' => 0
         ];
 
         $statement = $this->db->prepare($query);

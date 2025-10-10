@@ -22,3 +22,12 @@
 .btn-blue:hover {
     background-color: var(--dark-blue);
 }
+
+.btn-red {
+    transition: background-color .3s ease-in-out;
+    background-color: var(--light-red);
+}
+
+.btn-red:hover {
+    background-color: var(--dark-red);
+}

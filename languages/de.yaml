@@ -8,6 +8,7 @@ actions:
   cancel: 'Abbrechen'
   login: 'Anmelden'
   logout: 'Abmelden'
+  back: 'Zurück'
 navigation:
   recipes: 'Rezepte'
   users: 'Benutzer'
@@ -28,10 +29,11 @@ log:
 pages:
   titles:
     login: 'Anmelden'
+    history: 'Historie'
 recipes:
   titles:
     index: 'Übersicht der Rezepte'
-    create: 'Neues Rezept anlegen'
+    create: 'Rezept anlegen'
     update: 'Rezept bearbeiten'
     show: 'Rezept anzeigen'
   attributes:
@@ -44,7 +46,7 @@ recipes:
 users:
   titles:
     index: 'Übersicht der Benutzer'
-    create: 'Neuen Benutzer anlegen'
+    create: 'Benutzer anlegen'
     update: 'Benutzer bearbeiten'
     show: 'Benutzer anzeigen'
   attributes:

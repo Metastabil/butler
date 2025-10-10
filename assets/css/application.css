@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import 'variables.css';
+@import 'buttons.css';
+
+* { box-sizing: border-box; }
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    background-color: var(--dark-gray);
+}
+
+header {
+    width: 100%;
+}
+
+nav {
+    background-color: var(--dark-blue);
+    padding: 10px;
+    width: 100%;
+}
+
+nav a {
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+nav .logout {
+    background-color: var(--light-red);
+    border-radius: 10px;
+    float: right;
+}
+
+main {
+    padding: 10px;
+}
+
+.title {
+    color: var(--white);
+    text-align: center;
+    margin: 0 0 25px 0;
+}
+
+.subtitle {
+    margin: 25px 0 10px 0;
+    color: var(--white);
+    text-align: center;
+}
+
+.default-form {
+    width: 100%;
+}
+
+.default-form .input-wrapper {
+    margin: 0 0 10px 0;
+}
+
+.default-form label {
+    color: var(--white);
+    margin: 0 0 5px 0;
+    display: block;
+}
+
+.default-form label .required {
+    color: var(--dark-red);
+}
+
+.default-form input {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    border-radius: 10px;
+    outline: none;
+    padding: 8px;
+    border: none;
+    width: 100%;
+}
+
+.default-form input:disabled {
+    background-color: var(--gray);
+    color: var(--black);
+}
+
+.default-table {
+    border-collapse: collapse;
+    margin: 25px 0 0 0;
+    width: 100%;
+}
+
+.default-table td {
+    border-bottom: 1px solid var(--gray);
+    border-top: 1px solid var(--gray);
+    color: var(--white);
+    text-align: center;
+    padding: 10px;
+}
+
+.history {
+    color: var(--white);
+    text-align: center;
+}

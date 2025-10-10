@@ -94,7 +94,8 @@ class Users extends BaseController {
     public function show(int $id) :void {
         $data = [
             'title' => LANG->users->titles->show,
-            'element' => $this->user_model->select($id)
+            'element' => $this->user_model->select($id),
+            'logs' => $this->log_model->select($this->table, $id)
         ];
 
         $this->view->render('templates/header', $data)
