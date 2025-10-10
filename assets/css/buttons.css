@@ -1,0 +1,24 @@
+.btn {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    color: var(--black);
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:active {
+    position: relative;
+    top: 1px;
+}
+
+.btn-blue {
+    transition: background-color .3s ease-in-out;
+    background-color: var(--light-blue);
+}
+
+.btn-blue:hover {
+    background-color: var(--dark-blue);
+}
