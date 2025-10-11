@@ -1,8 +1,11 @@
 <?php
 /**
  * @var array $elements
+ * @var string $title
  */
 ?>
+
+<h1 class="title"><?= $title ?></h1>
 
 <a href="<?= base_url('create-user') ?>" title="<?= LANG->actions->create ?>" class="btn btn-blue btn-create">
     <?= LANG->actions->create ?>

@@ -1,8 +1,11 @@
 <?php
 /**
  * @var array $element
+ * @var string $title
  */
 ?>
+
+<h1 class="title"><?= $title ?></h1>
 
 <form action="<?= base_url('update-user/' . $element['id']) ?>" method="post" class="default-form">
     <div class="input-wrapper">

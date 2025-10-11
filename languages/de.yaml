@@ -9,6 +9,8 @@ actions:
   login: 'Anmelden'
   logout: 'Abmelden'
   back: 'Zurück'
+  search: 'Suchen'
+  reload: 'Zurücksetzen'
 navigation:
   recipes: 'Rezepte'
   users: 'Benutzer'

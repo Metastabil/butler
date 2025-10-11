@@ -62,6 +62,8 @@ class Pages extends BaseController {
      * @return void
      */
     #[NoReturn] public function logout() :void {
+        redirect_if_not_authenticated();
+
         unset($_SESSION['user']);
 
         redirect('login');

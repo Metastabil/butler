@@ -1,9 +1,12 @@
 <?php
 /**
  * @var array $element
+ * @var string $title
  * @var array $logs
  */
 ?>
+
+<h1 class="title"><?= $title ?></h1>
 
 <div class="options-wrapper">
     <a href="<?= base_url('update-user/' . $element['id']) ?>" class="btn btn-icon-update">

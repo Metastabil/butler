@@ -1,68 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-@import 'variables.css';
-@import 'buttons.css';
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+.btn {
+  font: 400 normal 18px "Rubik", sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  color: #000000;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+}
 
-* { box-sizing: border-box; }
+.btn:active {
+  position: relative;
+  top: 1px;
+}
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
+.btn-blue {
+  transition: background-color 0.3s ease-in-out;
+  background-color: #93BFCF;
+}
+
+.btn-red {
+  transition: background-color 0.3s ease-in-out;
+  background-color: #FF9F9F;
+}
+
+.btn-icon-update {
+  color: #C3EDC0;
+}
+
+.btn-icon-delete {
+  color: #FF9F9F;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 body {
-    font: 400 normal 18px 'Rubik', sans-serif;
-    background-color: var(--dark-gray);
+  font: 400 normal 18px "Rubik", sans-serif;
+  background-color: #333333;
+  color: #FFFFFF;
 }
 
 #login-container {
-    transform: translate(-50%, -50%);
-    position: absolute;
-    padding: 10px;
-    width: 100%;
-    left: 50%;
-    top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  padding: 10px;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+}
+#login-container .title {
+  text-align: center;
+  color: #93BFCF;
+}
+#login-container .title .dark-blue {
+  color: #6096B4;
+}
+#login-container .input-wrapper {
+  margin: 0 0 10px 0;
+}
+#login-container .input-wrapper label {
+  margin: 0 0 5px 0;
+  display: block;
+}
+#login-container .input-wrapper label .required {
+  color: #E97777;
+}
+#login-container .input-wrapper input {
+  font: 400 normal 18px "Rubik", sans-serif;
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  width: 100%;
 }
 
-.title {
-    color: var(--light-blue);
-    text-align: center;
-    margin: 0 0 25px 0;
-}
-
-.title .dark-blue {
-    color: var(--dark-blue);
-}
-
-#login-form {
-    width: 100%;
-}
-
-#login-form .input-wrapper {
-    margin: 0 0 10px 0;
-}
-
-#login-form label {
-    color: var(--white);
-    margin: 0 0 5px 0;
-    display: block;
-}
-
-#login-form label .required {
-    color: var(--dark-red);
-}
-
-#login-form input {
-    font: 400 normal 18px 'Rubik', sans-serif;
-    border-radius: 10px;
-    outline: none;
-    padding: 8px;
-    border: none;
-    width: 100%;
-}
-
-#login-form button {
-    margin: 0 auto;
-    display: block;
-}
+/*# sourceMappingURL=login.css.map */

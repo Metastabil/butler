@@ -13,6 +13,7 @@ $routes['logout'] = ['Pages', 'logout'];
 
 // Recipes
 $routes['recipes'] = ['Recipes', 'index'];
+$routes['recipes/:search'] = ['Recipes',' index'];
 $routes['create-recipe'] = ['Recipes', 'create'];
 $routes['show-recipe/:id'] = ['Recipes', 'show'];
 $routes['update-recipe/:id'] = ['Recipes', 'update'];

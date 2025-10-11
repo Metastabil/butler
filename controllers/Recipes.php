@@ -31,6 +31,8 @@ class Recipes extends BaseController {
     public function __construct() {
         parent::__construct();
 
+        redirect_if_not_authenticated();
+
         $this->user_id = $_SESSION['user']['id'];
         $this->recipe_model = new RecipeModel();
     }
@@ -39,9 +41,26 @@ class Recipes extends BaseController {
      * @return void
      */
     public function index() :void {
+        $elements = $this->recipe_model->select();
+        $filtered_elements = [];
+        $search = '';
+
+        if ($this->request->is('post')) {
+            $search = $this->request->get('search');
+
+            if (!empty($search)) {
+                foreach ($elements as $e) {
+                    if (str_contains(strtolower($e['name']), strtolower($search))) {
+                        $filtered_elements[] = $e;
+                    }
+                }
+            }
+        }
+
         $data = [
             'title' => LANG->recipes->titles->index,
-            'elements' => $this->recipe_model->select()
+            'elements' => empty($filtered_elements) && empty($search) ? $elements : $filtered_elements,
+            'search' => $search
         ];
 
         $this->view->render('templates/header', $data)
@@ -109,7 +128,8 @@ class Recipes extends BaseController {
     public function show(int $id) :void {
         $data = [
             'title' => LANG->recipes->titles->show,
-            'element' => $this->recipe_model->select($id)
+            'element' => $this->recipe_model->select($id),
+            'logs' => $this->log_model->select($this->table, $id)
         ];
 
         $this->view->render('templates/header', $data)

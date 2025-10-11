@@ -1,3 +1,11 @@
+<?php
+/**
+ * @var string $title
+ */
+?>
+
+<h1 class="title"><?= $title ?></h1>
+
 <form action="<?= base_url('create-recipe') ?>" method="post" enctype="multipart/form-data" class="default-form">
     <div class="input-wrapper">
         <label for="name">

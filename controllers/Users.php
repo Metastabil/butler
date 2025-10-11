@@ -31,6 +31,8 @@ class Users extends BaseController {
     public function __construct() {
         parent::__construct();
 
+        redirect_if_not_authenticated();
+
         $this->user_id = $_SESSION['user']['id'];
         $this->user_model = new UserModel();
     }

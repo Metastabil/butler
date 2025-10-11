@@ -1,3 +1,11 @@
+<?php
+/**
+ * @var string $title
+ */
+?>
+
+<h1 class="title"><?= $title ?></h1>
+
 <form action="<?= base_url('create-user') ?>" method="post" class="default-form">
     <div class="input-wrapper">
         <label for="username">
