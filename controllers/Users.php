@@ -32,6 +32,7 @@ class Users extends BaseController {
         parent::__construct();
 
         redirect_if_not_authenticated();
+        redirect_if_not_administrator();
 
         $this->user_id = $_SESSION['user']['id'];
         $this->user_model = new UserModel();
@@ -67,7 +68,8 @@ class Users extends BaseController {
         if ($this->request->is('post') && $this->request->validate($required_fields)) {
             $input = [
                 'username' => $this->request->get('username'),
-                'password' => password_hash($this->request->get('password'), PASSWORD_DEFAULT)
+                'password' => password_hash($this->request->get('password'), PASSWORD_DEFAULT),
+                'administrator' => (int)(bool)$this->request->get('administrator')
             ];
 
             $response = $this->user_model->insert($input);
@@ -124,6 +126,7 @@ class Users extends BaseController {
                 'id' => $id,
                 'username' => $this->request->get('username'),
                 'password' => $data['element']['password'],
+                'administrator' => (int)(bool)$this->request->get('administrator'),
                 'deleted' => 0
             ];
 

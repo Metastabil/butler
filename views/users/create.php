@@ -26,6 +26,17 @@
     </div>
 
     <div class="input-wrapper">
+        <label for="administrator">
+            <?= LANG->users->attributes->administrator ?>
+        </label>
+
+        <select name="administrator" id="administrator">
+            <option value="0"><?= LANG->general->no ?></option>
+            <option value="1"><?= LANG->general->yes ?></option>
+        </select>
+    </div>
+
+    <div class="input-wrapper">
         <button type="submit" title="<?= LANG->actions->save ?>" class="btn btn-blue">
             <?= LANG->actions->save ?>
         </button>

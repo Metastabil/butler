@@ -32,3 +32,9 @@ CREATE TABLE IF NOT EXISTS recipes (
     created DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+-- #####################################################################################################################
+-- #####################################################################################################################
+-- #####################################################################################################################
+
+ALTER TABLE users ADD COLUMN administrator BOOLEAN DEFAULT FALSE AFTER password;

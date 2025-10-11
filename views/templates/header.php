@@ -28,9 +28,11 @@
                     <?= LANG->navigation->recipes ?>
                 </a>
 
-                <a href="<?= base_url('users') ?>" title="<?= LANG->navigation->users ?>" class="btn">
-                    <?= LANG->navigation->users ?>
-                </a>
+                <?php if (is_administrator()) : ?>
+                    <a href="<?= base_url('users') ?>" title="<?= LANG->navigation->users ?>" class="btn">
+                        <?= LANG->navigation->users ?>
+                    </a>
+                <?php endif ?>
 
                 <a href="<?= base_url('logout') ?>" title="<?= LANG->actions->logout ?>" class="btn logout">
                     <?= LANG->actions->logout ?>

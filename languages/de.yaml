@@ -1,4 +1,7 @@
 project: 'Butler'
+general:
+  yes: 'Ja'
+  no: 'Nein'
 actions:
   create: 'Neu anlegen'
   save: 'Speichern'
@@ -56,5 +59,6 @@ users:
   attributes:
     username: 'Benutzername'
     password: 'Passwort'
+    administrator: 'Administrator'
     created: 'Angelegt am'
     updated: 'Aktualisiert am'

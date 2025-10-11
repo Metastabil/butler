@@ -154,13 +154,19 @@ main .default-form .input-wrapper label {
 main .default-form .input-wrapper label .required {
   color: #E97777;
 }
-main .default-form .input-wrapper input {
+main .default-form .input-wrapper input,
+main .default-form .input-wrapper select {
   font: 400 normal 18px "Rubik", sans-serif;
   border-radius: 10px;
   padding: 10px;
   outline: none;
   border: none;
   width: 100%;
+}
+main .default-form .input-wrapper input:disabled,
+main .default-form .input-wrapper select:disabled {
+  background-color: #C0C0C0;
+  color: #000000;
 }
 
 .trumbowyg-box,

@@ -44,7 +44,8 @@ class Pages extends BaseController {
 
             if (!empty($user) && password_verify($password, $user['password'])) {
                 $_SESSION['user'] = [
-                    'id' => $user['id']
+                    'id' => $user['id'],
+                    'administrator' => $user['administrator']
                 ];
 
                 redirect('recipes');

@@ -1,2 +1,2 @@
-INSERT INTO users (username, password)
-VALUES (:username, :password);
+INSERT INTO users (username, password, administrator)
+VALUES (:username, :password, :administrator);

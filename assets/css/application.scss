@@ -142,13 +142,19 @@ main {
         }
       }
 
-      input {
+      input,
+      select {
         font: 400 normal 18px 'Rubik', sans-serif;
         border-radius: 10px;
         padding: 10px;
         outline: none;
         border: none;
         width: 100%;
+
+        &:disabled {
+          background-color: $gray;
+          color: $black;
+        }
       }
     }
   }

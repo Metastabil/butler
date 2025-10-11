@@ -1,6 +1,7 @@
 SELECT id,
        username,
        password,
+       administrator,
        deleted,
        created,
        updated
