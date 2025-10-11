@@ -17,6 +17,9 @@
                 crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.28.0/dist/trumbowyg.min.js"></script>
         <script src="https://kit.fontawesome.com/cba80a8d38.js" crossorigin="anonymous"></script>
+        <script>
+            const base_url = '<?= base_url() ?>';
+        </script>
     </head>
     <body>
         <header>

@@ -142,7 +142,59 @@ class Recipes extends BaseController {
      * @return void
      */
     public function update(int $id) :void {
+        $data = [
+            'title' => LANG->recipes->titles->update,
+            'element' => $this->recipe_model->select($id)
+        ];
 
+        $required_fields = [
+            'name',
+            'ingredients',
+            'description'
+        ];
+
+        if ($this->request->is('post') && $this->request->validate($required_fields)) {
+            $base64_string = $data['element']['image'];
+
+            if (!empty($_FILES['image']['tmp_name'])) {
+                $file_tmp_path = $_FILES['image']['tmp_name'];
+                $file_type = $_FILES['image']['type'];
+                $file_content = file_get_contents($file_tmp_path);
+                $base64_string = base64_encode($file_content);
+                $base64_string = "data:$file_type;base64,$base64_string";
+
+                $max_size = 2 * 1024 * 1024; // 2 MB
+                if ($_FILES['image']['size'] > $max_size) {
+                    set_msg('Datei ist zu groß! Maximal 2 MB erlaubt.', 'error');
+
+                    redirect('recipes');
+                }
+            }
+
+            $input = [
+                'id' => $id,
+                'name' => $this->request->get('name'),
+                'ingredients' => $this->request->get('ingredients'),
+                'description' => $this->request->get('description'),
+                'image' => $base64_string,
+                'deleted' => 0
+            ];
+
+            if ($this->recipe_model->update($input)) {
+                set_msg(LANG->messages->success->update, 'success');
+
+                $this->log(LANG->log->update, $this->table, $id, $this->user_id);
+            }
+            else {
+                set_msg(LANG->messages->error->update, 'error');
+            }
+
+            redirect('recipes');
+        }
+
+        $this->view->render('templates/header', $data)
+                   ->render('recipes/update', $data)
+                   ->render('templates/footer');
     }
 
     /**

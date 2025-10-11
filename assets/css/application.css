@@ -141,5 +141,37 @@ main .default-table tr td {
 main .default-table tr .icon {
   font-size: 50px;
 }
+main .default-form {
+  width: 100%;
+}
+main .default-form .input-wrapper {
+  margin: 0 0 10px 0;
+}
+main .default-form .input-wrapper label {
+  margin: 0 0 5px 0;
+  display: block;
+}
+main .default-form .input-wrapper label .required {
+  color: #E97777;
+}
+main .default-form .input-wrapper input {
+  font: 400 normal 18px "Rubik", sans-serif;
+  border-radius: 10px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+.trumbowyg-box,
+.trumbowyg-editor {
+  font: 400 normal 18px "Rubik", sans-serif;
+  background-color: #FFFFFF;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-y: auto;
+  height: 200px;
+  color: #000000;
+}
 
 /*# sourceMappingURL=application.css.map */

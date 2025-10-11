@@ -126,4 +126,41 @@ main {
       }
     }
   }
+
+  .default-form {
+    width: 100%;
+
+    .input-wrapper {
+      margin: 0 0 10px 0;
+
+      label {
+        margin: 0 0 5px 0;
+        display: block;
+
+        .required {
+          color: $dark-red;
+        }
+      }
+
+      input {
+        font: 400 normal 18px 'Rubik', sans-serif;
+        border-radius: 10px;
+        padding: 10px;
+        outline: none;
+        border: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.trumbowyg-box,
+.trumbowyg-editor {
+  font: 400 normal 18px 'Rubik', sans-serif;
+  background-color: $white;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-y: auto;
+  height: 200px;
+  color: $black;
 }

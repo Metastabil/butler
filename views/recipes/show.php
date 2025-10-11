@@ -13,7 +13,7 @@
         <?= LANG->actions->update ?>
     </a>
 
-    <a href="<?= base_url('update-recipe/' . $element['id']) ?>" class="btn btn-red">
+    <a href="javascript:deleteRecipe(<?= $element['id'] ?>)" class="btn btn-red">
         <i class="fa-solid fa-trash-can"></i>
         <?= LANG->actions->delete ?>
     </a>
@@ -30,3 +30,13 @@
 <span class="description">
     <?= $element['description'] ?>
 </span>
+
+<script>
+    function deleteRecipe(id) {
+        const confirmation = confirm('Willst du das Rezept wirklich löschen?');
+
+        if (confirmation) {
+            window.location.href = `${base_url}delete-recipe/${id}`;
+        }
+    }
+</script>
