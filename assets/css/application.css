@@ -50,23 +50,84 @@ body {
   color: #FFFFFF;
 }
 
-header {
+/* header {
+  background-color: $dark-blue;
+  box-shadow: 0 0 10px $black;
   width: 100%;
-}
-header nav {
+
+  a {
+    padding: 8px 16px;
+  }
+
+  #nav-bars {
+    font-size: 25px;
+  }
+
+  nav {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    display: flex;
+    padding: 10px;
+    height: 95vh;
+    width: 100%;
+
+    a {
+      border-bottom: 1px solid $gray;
+      padding: 100px 8px;
+      display: block;
+      width: 100%;
+
+      &:last-child {
+        margin-top: auto;
+      }
+    }
+
+    .logout {
+      background-color: $light-red;
+      border-radius: 10px;
+    }
+  }
+} */
+header {
   background-color: #6096B4;
   box-shadow: 0 0 10px #000000;
-  padding: 10px;
-  width: 100%;
 }
-header nav a {
+header #nav-bars {
+  text-decoration: none;
   display: inline-block;
-  padding: 8px 16px;
+  font-size: 25px;
+  color: #000000;
+  padding: 8px;
 }
-header nav .logout {
-  background-color: #FF9F9F;
+header nav {
+  height: 95vh;
+}
+header nav .nav-wrapper {
+  padding: 10px;
+}
+header nav .nav-wrapper a {
+  box-shadow: inset 0 0 10px #000000;
+  background-color: #333333;
+  justify-content: flex-start;
+  text-decoration: none;
   border-radius: 10px;
-  float: right;
+  align-items: center;
+  flex-direction: row;
+  padding: 25px 8px;
+  display: flex;
+  color: #FFFFFF;
+}
+header nav .nav-wrapper a .nav-icon {
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  display: flex;
+  width: 50px;
+}
+header nav .nav-wrapper .logout {
+  background-color: #E97777;
 }
 
 main {

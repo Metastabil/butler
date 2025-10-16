@@ -38,3 +38,11 @@ CREATE TABLE IF NOT EXISTS recipes (
 -- #####################################################################################################################
 
 ALTER TABLE users ADD COLUMN administrator BOOLEAN DEFAULT FALSE AFTER password;
+
+CREATE TABLE IF NOT EXISTS categories (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    deleted BOOLEAN DEFAULT FALSE,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);

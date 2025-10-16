@@ -17,26 +17,55 @@
                 crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.28.0/dist/trumbowyg.min.js"></script>
         <script src="https://kit.fontawesome.com/cba80a8d38.js" crossorigin="anonymous"></script>
+        <script src="<?= base_url('assets/js/navigation.js') ?>"></script>
         <script>
             const base_url = '<?= base_url() ?>';
         </script>
     </head>
     <body>
         <header>
+            <a href="javascript:toggleNavigation()" id="nav-bars">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+
             <nav>
-                <a href="<?= base_url('recipes') ?>" title="<?= LANG->navigation->recipes ?>" class="btn">
-                    <?= LANG->navigation->recipes ?>
-                </a>
+                <div class="nav-wrapper">
+                    <a href="<?= base_url('recipes') ?>" title="<?= LANG->navigation->recipes ?>">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-rectangle-list"></i>
+                    </span>
+                        <?= LANG->navigation->recipes ?>
+                    </a>
+                </div>
+
+                <div class="nav-wrapper">
+                    <a href="<?= base_url('categories') ?>" title="<?= LANG->navigation->categories ?>">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-tags"></i>
+                    </span>
+                        <?= LANG->navigation->categories ?>
+                    </a>
+                </div>
 
                 <?php if (is_administrator()) : ?>
-                    <a href="<?= base_url('users') ?>" title="<?= LANG->navigation->users ?>" class="btn">
-                        <?= LANG->navigation->users ?>
-                    </a>
+                    <div class="nav-wrapper">
+                        <a href="<?= base_url('users') ?>" title="<?= LANG->navigation->users ?>">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </span>
+                            <?= LANG->navigation->users ?>
+                        </a>
+                    </div>
                 <?php endif ?>
 
-                <a href="<?= base_url('logout') ?>" title="<?= LANG->actions->logout ?>" class="btn logout">
-                    <?= LANG->actions->logout ?>
-                </a>
+                <div class="nav-wrapper">
+                    <a href="<?= base_url('logout') ?>" title="<?= LANG->actions->logout ?>" class="logout">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </span>
+                        <?= LANG->actions->logout ?>
+                    </a>
+                </div>
             </nav>
         </header>
         <main>

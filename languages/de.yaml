@@ -16,6 +16,7 @@ actions:
   reload: 'Zurücksetzen'
 navigation:
   recipes: 'Rezepte'
+  categories: 'Kategorien'
   users: 'Benutzer'
 messages:
   success:
@@ -35,6 +36,12 @@ pages:
   titles:
     login: 'Anmelden'
     history: 'Historie'
+categories:
+  titles:
+    index: 'Übersicht der Kategorien'
+    create: 'Kategorie anlegen'
+    update: 'Kategorie bearbeiten'
+    show: 'Kategorie anzeigen'
 recipes:
   titles:
     index: 'Übersicht der Rezepte'
