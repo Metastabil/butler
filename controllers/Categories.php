@@ -2,23 +2,23 @@
 namespace App\Controllers;
 
 use JetBrains\PhpStorm\NoReturn;
-use App\Models\UserModel;
+use App\Models\CategoryModel;
 
 /**
  * @author Julius Derigs
  * @version 1.0.0
  */
 
-class Users extends BaseController {
+class Categories extends BaseController {
     /**
      * @var string
      */
-    private string $table = 'users';
+    private string $table = 'categories';
 
     /**
-     * @var UserModel
+     * @var CategoryModel
      */
-    private UserModel $user_model;
+    private CategoryModel $category_model;
 
     /**
      * @var int
@@ -32,17 +32,16 @@ class Users extends BaseController {
         parent::__construct();
 
         redirect_if_not_authenticated();
-        redirect_if_not_administrator();
 
         $this->user_id = $_SESSION['user']['id'];
-        $this->user_model = new UserModel();
+        $this->category_model = new CategoryModel();
     }
 
     /**
      * @return void
      */
     public function index() :void {
-        $elements = $this->user_model->select();
+        $elements = $this->category_model->select();
         $filtered_elements = [];
         $search = '';
 
@@ -51,7 +50,7 @@ class Users extends BaseController {
 
             if (!empty($search)) {
                 foreach ($elements as $e) {
-                    if (str_contains(strtolower($e['username']), strtolower($search))) {
+                    if (str_contains(strtolower($e['name']), strtolower($search))) {
                         $filtered_elements[] = $e;
                     }
                 }
@@ -59,13 +58,13 @@ class Users extends BaseController {
         }
 
         $data = [
-            'title' => LANG->users->titles->index,
+            'title' => LANG->categories->titles->index,
             'elements' => empty($filtered_elements) && empty($search) ? $elements : $filtered_elements,
-            'search' => $search
+            'search' => ''
         ];
 
         $this->view->render('templates/header', $data)
-                   ->render('users/index', $data)
+                   ->render('categories/index', $data)
                    ->render('templates/footer');
     }
 
@@ -74,22 +73,19 @@ class Users extends BaseController {
      */
     public function create() :void {
         $data = [
-            'title' => LANG->users->titles->create
+            'title' => LANG->categories->titles->create
         ];
 
         $required_fields = [
-            'username',
-            'password'
+            'name'
         ];
 
         if ($this->request->is('post') && $this->request->validate($required_fields)) {
             $input = [
-                'username' => $this->request->get('username'),
-                'password' => password_hash($this->request->get('password'), PASSWORD_DEFAULT),
-                'administrator' => (int)(bool)$this->request->get('administrator')
+                'name' => $this->request->get('name')
             ];
 
-            $response = $this->user_model->insert($input);
+            $response = $this->category_model->insert($input);
 
             if ((int)$response > 0) {
                 set_msg(LANG->messages->success->save, 'success');
@@ -100,11 +96,11 @@ class Users extends BaseController {
                 set_msg(LANG->messages->error->save, 'error');
             }
 
-            redirect('users');
+            redirect('categories');
         }
 
         $this->view->render('templates/header', $data)
-                   ->render('users/create', $data)
+                   ->render('categories/create', $data)
                    ->render('templates/footer');
     }
 
@@ -114,13 +110,12 @@ class Users extends BaseController {
      */
     public function show(int $id) :void {
         $data = [
-            'title' => LANG->users->titles->show,
-            'element' => $this->user_model->select($id),
-            'logs' => $this->log_model->select($this->table, $id)
+            'title' => LANG->categories->titles->show,
+            'element' => $this->category_model->select($id)
         ];
 
         $this->view->render('templates/header', $data)
-                   ->render('users/show', $data)
+                   ->render('categories/show', $data)
                    ->render('templates/footer');
     }
 
@@ -130,28 +125,22 @@ class Users extends BaseController {
      */
     public function update(int $id) :void {
         $data = [
-            'title' => LANG->users->titles->update,
-            'element' => $this->user_model->select($id)
+            'title' => LANG->categories->titles->update,
+            'element' => $this->category_model->select($id)
         ];
 
         $required_fields = [
-            'username'
+            'name'
         ];
 
         if ($this->request->is('post') && $this->request->validate($required_fields)) {
             $input = [
                 'id' => $id,
-                'username' => $this->request->get('username'),
-                'password' => $data['element']['password'],
-                'administrator' => (int)(bool)$this->request->get('administrator'),
+                'name' => $this->request->get('name'),
                 'deleted' => 0
             ];
 
-            if (!empty($this->request->get('password'))) {
-                $input['password'] = password_hash($this->request->get('password'), PASSWORD_DEFAULT);
-            }
-
-            if ($this->user_model->update($input)) {
+            if ($this->category_model->update($input)) {
                 set_msg(LANG->messages->success->update, 'success');
 
                 $this->log(LANG->log->update, $this->table, $id, $this->user_id);
@@ -160,11 +149,11 @@ class Users extends BaseController {
                 set_msg(LANG->messages->error->update, 'error');
             }
 
-            redirect('users');
+            redirect('categories');
         }
 
         $this->view->render('templates/header', $data)
-                   ->render('users/update', $data)
+                   ->render('categories/update', $data)
                    ->render('templates/footer');
     }
 
@@ -173,14 +162,14 @@ class Users extends BaseController {
      * @return void
      */
     #[NoReturn] public function delete(int $id) :void {
-        $element = $this->user_model->select($id);
+        $element = $this->category_model->select($id);
         $input = [
             'id' => $id,
-            'username' => $element['username'],
-            'password' => $element['password']
+            'name' => $element['name'],
+            'deleted' => 1
         ];
 
-        if ($this->user_model->update($input)) {
+        if ($this->category_model->update($input)) {
             set_msg(LANG->messages->success->delete, 'success');
 
             $this->log(LANG->log->update, $this->table, $id, $this->user_id);
@@ -189,6 +178,6 @@ class Users extends BaseController {
             set_msg(LANG->messages->error->delete, 'error');
         }
 
-        redirect('users');
+        redirect('categories');
     }
 }

@@ -6,19 +6,20 @@
  */
 ?>
 
+
 <h1 class="title"><?= $title ?></h1>
 
-<a href="<?= base_url('create-user') ?>" title="<?= LANG->actions->create ?>" class="btn btn-blue btn-create">
+<a href="<?= base_url('create-category') ?>" title="<?= LANG->actions->create ?>" class="btn btn-blue btn-create">
     <?= LANG->actions->create ?>
 </a>
 
 <div id="search-container">
-    <form action="<?= base_url('users') ?>" method="post" id="search-form">
+    <form action="<?= base_url('categories') ?>" method="post" id="search-form">
         <input type="search" name="search" id="search" placeholder="<?= LANG->actions->search ?>" value="<?= $search ?>" />
         <button type="submit" title="<?= LANG->actions->search ?>" class="btn btn-blue">
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <a href="<?= base_url('users') ?>" title="<?= LANG->actions->reload ?>" class="btn btn-blue">
+        <a href="<?= base_url('categories') ?>" title="<?= LANG->actions->reload ?>" class="btn btn-blue">
             <i class="fa-solid fa-rotate"></i>
         </a>
     </form>
@@ -26,12 +27,12 @@
 
 <table class="default-table">
     <?php foreach ($elements as $element) : ?>
-        <tr onclick="window.location.href='<?= esc(base_url('show-user/' . $element['id'])) ?>'">
+        <tr onclick="window.location.href='<?= esc(base_url('show-category/' . $element['id'])) ?>'">
             <td>
                 <span class="table-icon-wrapper">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-tags"></i>
                 </span>
-                <?= $element['username'] ?>
+                <?= $element['name'] ?>
             </td>
         </tr>
     <?php endforeach ?>

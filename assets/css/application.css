@@ -149,19 +149,31 @@ main .recipes-container {
   margin: 10px 0 0 0;
 }
 main .default-table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0 10px;
   margin: 10px 0 0 0;
   width: 100%;
 }
-main .default-table tr:last-child td {
-  border: none;
-}
 main .default-table tr td {
-  border-bottom: 1px solid #C0C0C0;
+  box-shadow: inset 0 0 10px #000000;
+  justify-content: flex-start;
+  background-color: #FFFFFF;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 10px;
+  color: #333333;
   padding: 10px;
+  display: flex;
 }
-main .default-table tr .icon {
+main .default-table tr td .table-icon-wrapper {
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 0 0;
+  aspect-ratio: 1/1;
+  color: #6096B4;
   font-size: 50px;
+  display: flex;
+  width: 75px;
 }
 main .default-form {
   width: 100%;

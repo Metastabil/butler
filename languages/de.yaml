@@ -38,13 +38,17 @@ pages:
     history: 'Historie'
 categories:
   titles:
-    index: 'Übersicht der Kategorien'
+    index: 'Kategorien'
     create: 'Kategorie anlegen'
     update: 'Kategorie bearbeiten'
     show: 'Kategorie anzeigen'
+  attributes:
+    name: 'Name'
+    created: 'Angelegt am'
+    updated: 'Aktualisiert am'
 recipes:
   titles:
-    index: 'Übersicht der Rezepte'
+    index: 'Rezepte'
     create: 'Rezept anlegen'
     update: 'Rezept bearbeiten'
     show: 'Rezept anzeigen'
@@ -59,7 +63,7 @@ recipes:
     updated: 'Aktualisiert am'
 users:
   titles:
-    index: 'Übersicht der Benutzer'
+    index: 'Benutzer'
     create: 'Benutzer anlegen'
     update: 'Benutzer bearbeiten'
     show: 'Benutzer anzeigen'

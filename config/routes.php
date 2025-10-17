@@ -7,13 +7,19 @@
 
 $routes[] = ['Pages', 'login'];
 
+// Categories
+$routes['categories'] = ['Categories', 'index'];
+$routes['create-category'] = ['Categories', 'create'];
+$routes['show-category/:id'] = ['Categories', 'show'];
+$routes['update-category/:id'] = ['Categories', 'update'];
+$routes['delete-category/:id'] = ['Categories', 'delete'];
+
 // Pages
 $routes['login'] = ['Pages', 'login'];
 $routes['logout'] = ['Pages', 'logout'];
 
 // Recipes
 $routes['recipes'] = ['Recipes', 'index'];
-$routes['recipes/:search'] = ['Recipes',' index'];
 $routes['create-recipe'] = ['Recipes', 'create'];
 $routes['show-recipe/:id'] = ['Recipes', 'show'];
 $routes['update-recipe/:id'] = ['Recipes', 'update'];
