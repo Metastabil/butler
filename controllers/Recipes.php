@@ -1,7 +1,9 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\RecipeCategoryAssignmentModel;
 use JetBrains\PhpStorm\NoReturn;
+use App\Models\CategoryModel;
 use App\Models\RecipeModel;
 
 /**
@@ -26,6 +28,16 @@ class Recipes extends BaseController {
     private int $user_id;
 
     /**
+     * @var RecipeCategoryAssignmentModel
+     */
+    private RecipeCategoryAssignmentModel $recipe_category_assignment_model;
+
+    /**
+     * @var CategoryModel
+     */
+    private CategoryModel $category_model;
+
+    /**
      * Constructor
      */
     public function __construct() {
@@ -35,6 +47,8 @@ class Recipes extends BaseController {
 
         $this->user_id = $_SESSION['user']['id'];
         $this->recipe_model = new RecipeModel();
+        $this->recipe_category_assignment_model = new RecipeCategoryAssignmentModel();
+        $this->category_model = new CategoryModel();
     }
 
     /**
@@ -73,7 +87,8 @@ class Recipes extends BaseController {
      */
     public function create() :void {
         $data = [
-            'title' => LANG->recipes->titles->create
+            'title' => LANG->recipes->titles->create,
+            'categories' => $this->category_model->select()
         ];
 
         $required_fields = [
@@ -105,6 +120,17 @@ class Recipes extends BaseController {
             $response = $this->recipe_model->insert($input);
 
             if ($response > 0) {
+                $categories = $this->request->get('categories');
+
+                foreach ($categories as $c) {
+                    $category_input = [
+                        'recipe_id' => $response,
+                        'category_id' => $c
+                    ];
+
+                    $this->recipe_category_assignment_model->insert($category_input);
+                }
+
                 set_msg(LANG->messages->success->save, 'success');
 
                 $this->log(LANG->log->create, $this->table, $response, $this->user_id);
@@ -142,9 +168,14 @@ class Recipes extends BaseController {
      * @return void
      */
     public function update(int $id) :void {
+        $element = $this->recipe_model->select($id);
+        $selected_categories = explode(',', $element['category_ids']);
+
         $data = [
             'title' => LANG->recipes->titles->update,
-            'element' => $this->recipe_model->select($id)
+            'element' => $element,
+            'categories' => $this->category_model->select(),
+            'selected_categories' => $selected_categories
         ];
 
         $required_fields = [
@@ -182,6 +213,21 @@ class Recipes extends BaseController {
 
             if ($this->recipe_model->update($input)) {
                 set_msg(LANG->messages->success->update, 'success');
+
+                foreach ($selected_categories as $sc) {
+                    $this->delete_assigned_categories($id, (int)$sc);
+                }
+
+                $new_selected_categories = $this->request->get('categories');
+
+                foreach ($new_selected_categories as $nsc) {
+                    $new_category_input = [
+                        'recipe_id' => $id,
+                        'category_id' => $nsc
+                    ];
+
+                    $this->recipe_category_assignment_model->insert($new_category_input);
+                }
 
                 $this->log(LANG->log->update, $this->table, $id, $this->user_id);
             }
@@ -222,5 +268,19 @@ class Recipes extends BaseController {
         }
 
         redirect('recipes');
+    }
+
+    /**
+     * @param $recipe_id
+     * @param $category_id
+     * @return bool
+     */
+    private function delete_assigned_categories($recipe_id, $category_id) :bool {
+        $input = [
+            'recipe_id' => $recipe_id,
+            'category_id' => $category_id
+        ];
+
+        return $this->recipe_category_assignment_model->delete_by_recipe_id($input);
     }
 }

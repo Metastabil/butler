@@ -1,7 +1,9 @@
 <?php
 /**
- * @var string $title
+ * @var array $selected_categories
+ * @var array $categories
  * @var array $element
+ * @var string $title
  */
 ?>
 
@@ -41,6 +43,17 @@
         </label>
 
         <textarea name="description" id="description" placeholder="<?= LANG->recipes->attributes->description ?>" class="text-editor"><?= $element['description'] ?></textarea>
+    </div>
+
+    <div class="input-wrapper categories-wrapper">
+        <?php foreach ($categories as $c) : ?>
+            <div class="category-item">
+                <input type="checkbox" name="categories[]" id="<?= $c['name'] ?>" value="<?= $c['id'] ?>" <?= in_array($c['id'], $selected_categories) ? 'checked' : '' ?> />
+                <label for="<?= $c['name'] ?>">
+                    <?= $c['name'] ?>
+                </label>
+            </div>
+        <?php endforeach ?>
     </div>
 
     <div class="input-wrapper">

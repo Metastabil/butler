@@ -46,3 +46,18 @@ CREATE TABLE IF NOT EXISTS categories (
     created DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+-- #####################################################################################################################
+-- #####################################################################################################################
+-- #####################################################################################################################
+
+CREATE TABLE IF NOT EXISTS recipe_category_assignments(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    recipe_id INT UNSIGNED NOT NULL,
+    category_id INT UNSIGNED NOT NULL,
+    deleted BOOLEAN DEFAULT FALSE,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (recipe_id) REFERENCES recipes (id),
+    FOREIGN KEY (category_id) REFERENCES categories (id)
+);

@@ -191,6 +191,26 @@ main {
         }
       }
     }
+
+    .categories-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); // 2 pro Reihe
+      gap: 10px;
+
+      .category-item {
+        display: flex;          // Checkbox + Label nebeneinander
+        align-items: center;
+
+        input {
+          margin-right: 5px;
+          width: revert;
+        }
+
+        label {
+          display: inline-block;
+        }
+      }
+    }
   }
 }
 

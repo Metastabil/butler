@@ -202,6 +202,22 @@ main .default-form .input-wrapper select:disabled {
   background-color: #C0C0C0;
   color: #000000;
 }
+main .default-form .categories-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+main .default-form .categories-wrapper .category-item {
+  display: flex;
+  align-items: center;
+}
+main .default-form .categories-wrapper .category-item input {
+  margin-right: 5px;
+  width: revert;
+}
+main .default-form .categories-wrapper .category-item label {
+  display: inline-block;
+}
 
 .trumbowyg-box,
 .trumbowyg-editor {

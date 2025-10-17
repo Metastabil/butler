@@ -1,5 +1,6 @@
 <?php
 /**
+ * @var array $categories
  * @var string $title
  */
 ?>
@@ -42,6 +43,17 @@
         <textarea name="description" id="description" placeholder="<?= LANG->recipes->attributes->description ?>" class="text-editor"></textarea>
     </div>
 
+    <div class="input-wrapper categories-wrapper">
+        <?php foreach ($categories as $c) : ?>
+            <div class="category-item">
+                <input type="checkbox" name="categories[]" id="<?= $c['name'] ?>" value="<?= $c['id'] ?>" />
+                <label for="<?= $c['name'] ?>">
+                    <?= $c['name'] ?>
+                </label>
+            </div>
+        <?php endforeach ?>
+    </div>
+
     <div class="input-wrapper">
         <button title="<?= LANG->actions->save ?>" class="btn btn-blue">
             <?= LANG->actions->save ?>
@@ -65,13 +77,13 @@
     $('.default-form').on('submit', function(e) {
         e.preventDefault();
 
-        const fileInput = $('#image')[0]; // Zugriff auf das DOM-Element
-        const maxSize = 2 * 1024 * 1024; // 2 MB
+        const fileInput = $('#image')[0];
+        const maxSize = 2 * 1024 * 1024;
 
         if (fileInput.files.length > 0) {
             const file = fileInput.files[0];
             if (file.size > maxSize) {
-                alert('Datei ist zu groß');
+                alert('Das Bild ist zu groß');
 
                 return;
             }

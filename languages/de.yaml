@@ -54,11 +54,13 @@ recipes:
     show: 'Rezept anzeigen'
     ingredients: 'Zutaten'
     description: 'Beschreibung'
+    categories: 'Kategorien'
   attributes:
     name: 'Name'
     ingredients: 'Zutaten'
     description: 'Beschreibung'
     image: 'Bild'
+    categories: 'Kategorien'
     created: 'Angelegt am'
     updated: 'Aktualisiert am'
 users:

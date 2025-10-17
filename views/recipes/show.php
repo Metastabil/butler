@@ -1,5 +1,6 @@
 <?php
 /**
+ * @var array $categories
  * @var array $element
  * @var string $title
  */
@@ -29,6 +30,11 @@
 <h3 class="subtitle"><?= LANG->recipes->titles->description ?></h3>
 <span class="description">
     <?= $element['description'] ?>
+</span>
+
+<h3 class="subtitle"><?= LANG->recipes->titles->categories ?></h3>
+<span class="description">
+    <?= $element['categories'] ?>
 </span>
 
 <script>
