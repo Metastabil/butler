@@ -1,48 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 .btn {
-  font: 400 normal 18px "Rubik", sans-serif;
-  text-decoration: none;
-  display: inline-block;
-  color: var(--black);
-  border-radius: 5px;
-  padding: 8px 16px;
-  cursor: pointer;
-  border: none;
+    font: 400 normal 18px 'Rubik', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    color: var(--black);
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
 }
 
 .btn:active {
-  position: relative;
-  top: 1px;
+    position: relative;
+    top: 1px;
 }
 
 .btn-blue {
-  transition: background-color 0.3s ease-in-out;
-  background-color: var(--light-blue);
-}
-
-.btn-blue:hover {
-  background-color: var(--dark-blue);
+    transition: background-color .3s ease-in-out;
+    background-color: var(--light-blue);
 }
 
 .btn-red {
-  transition: background-color 0.3s ease-in-out;
-  background-color: var(--light-red);
-}
-
-.btn-red:hover {
-  background-color: var(--dark-red);
+    transition: background-color .3s ease-in-out;
+    background-color: var(--light-red);
 }
 
 .btn-icon-update {
-  color: var(--light-green);
+    color: var(--light-green);
 }
 
 .btn-icon-delete {
-  color: var(--light-red);
+    color: var(--light-red);
 }
-
-.btn-create {
-  margin: 25px 0 0 0;
-}
-
-/*# sourceMappingURL=buttons.css.map */

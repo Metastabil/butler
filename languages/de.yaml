@@ -14,10 +14,13 @@ actions:
   back: 'Zurück'
   search: 'Suchen'
   reload: 'Zurücksetzen'
+  send: 'Absenden'
 navigation:
   recipes: 'Rezepte'
   categories: 'Kategorien'
   users: 'Benutzer'
+  stones: 'Steine'
+  advent_calendar: 'Adventskalender'
 messages:
   success:
     save: 'Erfolgreich gespeichert'
@@ -28,6 +31,7 @@ messages:
     update: 'Fehler beim Aktualisieren'
     delete: 'Fehler beim Löschen'
     credentials: 'Unbekannte Benutzerdaten'
+    unknown_number: 'Unbekannte Nummer'
 log:
   create: 'Anlegen'
   update: 'Bearbeiten'
@@ -61,6 +65,21 @@ recipes:
     description: 'Beschreibung'
     image: 'Bild'
     categories: 'Kategorien'
+    created: 'Angelegt am'
+    updated: 'Aktualisiert am'
+stones:
+  titles:
+    index: 'Steine'
+    create: 'Stein anlegen'
+    update: 'Stein bearbeiten'
+    show: 'Stein anzeigen'
+    discover: 'Stein heraussuchen'
+    advent_calendar: 'Adventskalender'
+  attributes:
+    name: 'Bezeichnung'
+    number: 'Nummer'
+    rarity: 'Seltenheit'
+    description: 'Beschreibung'
     created: 'Angelegt am'
     updated: 'Aktualisiert am'
 users:

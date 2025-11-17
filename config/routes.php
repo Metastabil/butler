@@ -25,6 +25,15 @@ $routes['show-recipe/:id'] = ['Recipes', 'show'];
 $routes['update-recipe/:id'] = ['Recipes', 'update'];
 $routes['delete-recipe/:id'] = ['Recipes', 'delete'];
 
+// Stones
+$routes['stones'] = ['Stones', 'index'];
+$routes['discover'] = ['Stones', 'discover'];
+$routes['create-stone'] = ['Stones', 'create'];
+$routes['show-stone/:id'] = ['Stones', 'show'];
+$routes['update-stone/:id'] = ['Stones', 'update'];
+$routes['delete-stone/:id'] = ['Stones', 'delete'];
+$routes['adventskalender'] = ['Stones', 'discover'];
+
 // Users
 $routes['users'] = ['Users', 'index'];
 $routes['create-user'] = ['Users', 'create'];

@@ -1,233 +1,289 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
-.btn {
-  font: 400 normal 18px "Rubik", sans-serif;
-  text-decoration: none;
-  display: inline-block;
-  color: #000000;
-  border-radius: 5px;
-  padding: 8px 16px;
-  cursor: pointer;
-  border: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import 'variables.css';
+@import 'buttons.css';
 
-.btn:active {
-  position: relative;
-  top: 1px;
-}
-
-.btn-blue {
-  transition: background-color 0.3s ease-in-out;
-  background-color: #93BFCF;
-}
-
-.btn-red {
-  transition: background-color 0.3s ease-in-out;
-  background-color: #FF9F9F;
-}
-
-.btn-icon-update {
-  color: #C3EDC0;
-}
-
-.btn-icon-delete {
-  color: #FF9F9F;
-}
-
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
 }
 
 body {
-  font: 400 normal 18px "Rubik", sans-serif;
-  background-color: #333333;
-  color: #FFFFFF;
+    font: 400 normal 18px 'Rubik', sans-serif;
+    background-color: var(--dark-gray);
+    color: var(--white);
 }
 
+/*
+ * #####################################################################################################################
+ * # Header ############################################################################################################
+ * #####################################################################################################################
+ */
 header {
-  background-color: #6096B4;
-  box-shadow: 0 0 10px #000000;
-}
-header #nav-bars {
-  text-decoration: none;
-  display: inline-block;
-  font-size: 25px;
-  color: #000000;
-  padding: 8px;
-}
-header nav {
-  height: 95vh;
-}
-header nav .nav-wrapper {
-  padding: 10px;
-}
-header nav .nav-wrapper a {
-  box-shadow: inset 0 0 10px #000000;
-  background-color: #333333;
-  justify-content: flex-start;
-  text-decoration: none;
-  border-radius: 10px;
-  align-items: center;
-  flex-direction: row;
-  padding: 25px 8px;
-  display: flex;
-  color: #FFFFFF;
-}
-header nav .nav-wrapper a .nav-icon {
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  aspect-ratio: 1/1;
-  display: flex;
-  width: 50px;
-}
-header nav .nav-wrapper .logout {
-  background-color: #E97777;
+    background-color: var(--dark-blue);
+    box-shadow: 0 0 10px var(--black);
 }
 
+#nav-bars {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--black);
+    font-size: 25px;
+    padding: 8px;
+}
+
+nav {
+    height: 95vh;
+}
+
+.nav-wrapper {
+    padding: 10px;
+}
+
+.nav-wrapper a {
+    box-shadow: inset 0 0 10px var(--black);
+    background-color: var(--dark-gray);
+    justify-content: flex-start;
+    text-decoration: none;
+    border-radius: 10px;
+    align-items: center;
+    flex-direction: row;
+    color: var(--white);
+    padding: 25px 8px;
+    display: flex;
+}
+
+.nav-wrapper a .nav-icon {
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+    display: flex;
+    width: 50px;
+}
+
+.nav-wrapper .logout {
+    background-color: var(--dark-red);
+}
+
+/*
+ * #####################################################################################################################
+ * # Main ##############################################################################################################
+ * #####################################################################################################################
+ */
 main {
-  padding: 10px;
-}
-main .title {
-  margin: 0 0 10px 0;
-  text-align: center;
-}
-main .subtitle {
-  margin: 0 0 10px 0;
-}
-main #search-container {
-  margin: 10px 0 0 0;
-  width: 100%;
-}
-main #search-container #search-form {
-  display: flex;
-  gap: 10px;
-}
-main #search-container #search-form input {
-  font: 400 normal 18px "Rubik", sans-serif;
-  border-radius: 10px;
-  padding: 8px;
-  outline: none;
-  border: none;
-  flex: 1;
-}
-main .image {
-  box-shadow: inset 0 0 10px #000000;
-  background-position: center;
-  justify-content: flex-start;
-  background-size: cover;
-  align-items: flex-end;
-  border-radius: 10px;
-  margin: 0 0 25px 0;
-  height: 200px;
-  display: flex;
-  width: 100%;
-}
-main .image .recipe-title {
-  box-shadow: inset 0 0 10px #000000;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  background-color: #333333;
-  text-align: center;
-  padding: 5px;
-  width: 100%;
-  margin: 0;
-}
-main .action-container {
-  justify-content: space-evenly;
-  align-items: center;
-  display: flex;
-  margin: 0 0 10px 0;
-}
-main .recipes-container {
-  margin: 10px 0 0 0;
-}
-main .default-table {
-  border-collapse: separate;
-  border-spacing: 0 10px;
-  margin: 10px 0 0 0;
-  width: 100%;
-}
-main .default-table tr td {
-  box-shadow: inset 0 0 10px #000000;
-  justify-content: flex-start;
-  background-color: #FFFFFF;
-  align-items: center;
-  flex-direction: row;
-  border-radius: 10px;
-  color: #333333;
-  padding: 10px;
-  display: flex;
-}
-main .default-table tr td .table-icon-wrapper {
-  justify-content: center;
-  align-items: center;
-  margin: 0 10px 0 0;
-  aspect-ratio: 1/1;
-  color: #6096B4;
-  font-size: 50px;
-  display: flex;
-  width: 75px;
-}
-main .default-form {
-  width: 100%;
-}
-main .default-form .input-wrapper {
-  margin: 0 0 10px 0;
-}
-main .default-form .input-wrapper label {
-  margin: 0 0 5px 0;
-  display: block;
-}
-main .default-form .input-wrapper label .required {
-  color: #E97777;
-}
-main .default-form .input-wrapper input,
-main .default-form .input-wrapper select {
-  font: 400 normal 18px "Rubik", sans-serif;
-  border-radius: 10px;
-  padding: 10px;
-  outline: none;
-  border: none;
-  width: 100%;
-}
-main .default-form .input-wrapper input:disabled,
-main .default-form .input-wrapper select:disabled {
-  background-color: #C0C0C0;
-  color: #000000;
-}
-main .default-form .categories-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-main .default-form .categories-wrapper .category-item {
-  display: flex;
-  align-items: center;
-}
-main .default-form .categories-wrapper .category-item input {
-  margin-right: 5px;
-  width: revert;
-}
-main .default-form .categories-wrapper .category-item label {
-  display: inline-block;
+    padding: 10px;
 }
 
+.title {
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.subtitle {
+    margin: 0 0 10px 0;
+}
+
+#search-container {
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+
+#search-form {
+    display: flex;
+    gap: 10px;
+}
+
+#search-form input {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    border-radius: 10px;
+    padding: 8px;
+    outline: none;
+    border: none;
+    flex: 1;
+}
+
+/*
+ * #####################################################################################################################
+ * # Image #############################################################################################################
+ * #####################################################################################################################
+ */
+.image {
+    box-shadow: inset 0 0 10px var(--black);
+    background-position: center;
+    justify-content: flex-start;
+    background-size: cover;
+    align-items: flex-end;
+    border-radius: 10px;
+    margin: 0 0 25px 0;
+    height: 200px;
+    display: flex;
+    width: 100%;
+}
+
+.image .recipe-title {
+    box-shadow: inset 0 0 10px var(--black);
+    background-color: var(--dark-gray);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    margin: 0;
+}
+
+.action-container {
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    margin: 0 0 10px 0;
+}
+
+.recipes-container {
+    margin: 10px 0 0 0;
+}
+
+/*
+ * #####################################################################################################################
+ * # Default Table #####################################################################################################
+ * #####################################################################################################################
+ */
+.default-table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+
+.default-table td {
+    box-shadow: inset 0 0 10px var(--black);
+    background-color: var(--white);
+    justify-content: flex-start;
+    color: var(--dark-gray);
+    align-items: center;
+    flex-direction: row;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+}
+
+.default-table td .table-icon-wrapper {
+    justify-content: center;
+    color: var(--dark-blue);
+    align-items: center;
+    margin: 0 10px 0 0;
+    aspect-ratio: 1/1;
+    font-size: 50px;
+    display: flex;
+    width: 75px;
+}
+
+/*
+ * #####################################################################################################################
+ * # Default Form ######################################################################################################
+ * #####################################################################################################################
+ */
+.default-form {
+    width: 100%;
+}
+
+.default-form .input-wrapper {
+    margin: 0 0 10px 0;
+}
+
+.default-form .input-wrapper label {
+    margin: 0 0 5px 0;
+    display: block;
+}
+
+.default-form .input-wrapper label .required {
+    color: var(--dark-red);
+}
+
+.default-form .input-wrapper input, .default-form .input-wrapper textarea, .default-form .input-wrapper select {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+.default-form .input-wrapper input:disabled, .default-form .input-wrapper select:disabled {
+    background-color: var(--gray);
+    color: var(--black);
+}
+
+/*
+ * #####################################################################################################################
+ * # Categories ########################################################################################################
+ * #####################################################################################################################
+ */
+.categories-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.category-item {
+    align-items: center;
+    display: flex;
+}
+
+.category-item input {
+    margin-right: 5px;
+    width: revert;
+}
+
+.category-item label {
+    display: inline-block;
+}
+
+/*
+ * #####################################################################################################################
+ * # Advent Calendar 2025 ##############################################################################################
+ * #####################################################################################################################
+ */
+.advent-calendar-form {
+    width: 100%;
+}
+
+.advent-calendar-form .input-wrapper {
+    margin: 0 0 10px 0;
+}
+
+.advent-calendar-form .input-wrapper label {
+    margin: 0 0 5px 0;
+    display: block;
+}
+
+.advent-calendar-form .input-wrapper label .required {
+    color: var(--dark-red);
+}
+
+.advent-calendar-form .input-wrapper input {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+/*
+ * #####################################################################################################################
+ * # Overrides #########################################################################################################
+ * #####################################################################################################################
+ */
 .trumbowyg-box,
 .trumbowyg-editor {
-  font: 400 normal 18px "Rubik", sans-serif;
-  background-color: #FFFFFF;
-  word-wrap: break-word;
-  white-space: normal;
-  overflow-y: auto;
-  height: 200px;
-  color: #000000;
+    font: 400 normal 18px 'Rubik', sans-serif;
+    background-color: var(--white);
+    word-wrap: break-word;
+    color: var(--black);
+    white-space: normal;
+    overflow-y: auto;
+    height: 200px;
 }
-
-/*# sourceMappingURL=application.css.map */

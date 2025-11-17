@@ -1,0 +1,85 @@
+#!/usr/bin/env php
+<?php
+
+$argvCount = count($argv);
+if ($argvCount < 3) {
+    echo "Usage: php generate <type> <name>\n";
+    exit(1);
+}
+
+$type = strtolower($argv[1]);
+$name = $argv[2];
+
+
+switch ($type) {
+    case 'controller':
+        generate_controller($name);
+        break;
+    case 'model':
+        $folder = $argv[3];
+        generate_model($name, $folder);
+        break;
+    default:
+        echo "Unknown type: $type\n";
+        break;
+}
+
+/**
+ * @param string $name
+ * @return void
+ */
+function generate_controller(string $name) :void {
+    $directory = __DIR__ . '/controllers/';
+    $class_name = ucfirst($name);
+    $file_path = "$directory/$class_name.php";
+
+    if (file_exists($file_path)) {
+        echo "Controller '$class_name' existiert bereits!\n";
+        return;
+    }
+
+    $stub_path = __DIR__ . '/system/stubs/controller.stub';
+    if (!file_exists($stub_path)) {
+        echo "Fehlendes Template: $stub_path\n";
+        return;
+    }
+
+    $template = file_get_contents($stub_path);
+    $content = str_replace('{{className}}', $class_name, $template);
+
+    file_put_contents($file_path, $content);
+    echo "Controller $class_name wurde unter $file_path erstellt.\n";
+}
+
+/**
+ * @param string $name
+ * @param string $folder
+ * @return void
+ */
+function generate_model(string $name, string $folder) :void {
+    $directory = __DIR__ . '/models/';
+    $class_name = ucfirst($name);
+    $file_path = "$directory/$class_name.php";
+
+    if (file_exists($file_path)) {
+        echo "Controller '$class_name' existiert bereits!\n";
+        return;
+    }
+
+    $stub_path = __DIR__ . '/system/stubs/model.stub';
+    if (!file_exists($stub_path)) {
+        echo "Fehlendes Template: $stub_path\n";
+        return;
+    }
+
+    $replacements = [
+        '{{className}}' => $class_name,
+        '{{folder}}' => $folder
+    ];
+
+    $template = file_get_contents($stub_path);
+    $content = str_replace(array_keys($replacements), array_values($replacements), $template);
+
+    file_put_contents($file_path, $content);
+    echo "Model $class_name wurde unter $file_path erstellt.\n";
+}

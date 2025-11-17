@@ -49,6 +49,15 @@
                     </a>
                 </div>
 
+                <div class="nav-wrapper">
+                    <a href="<?= base_url('adventskalender') ?>" title="<?= LANG->navigation->advent_calendar ?>">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-gem"></i>
+                    </span>
+                        <?= LANG->navigation->advent_calendar ?>
+                    </a>
+                </div>
+
                 <?php if (is_administrator()) : ?>
                     <div class="nav-wrapper">
                         <a href="<?= base_url('users') ?>" title="<?= LANG->navigation->users ?>">

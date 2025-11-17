@@ -61,3 +61,18 @@ CREATE TABLE IF NOT EXISTS recipe_category_assignments(
     FOREIGN KEY (recipe_id) REFERENCES recipes (id),
     FOREIGN KEY (category_id) REFERENCES categories (id)
 );
+
+-- #####################################################################################################################
+-- # Laptop 13.11.2025 #################################################################################################
+-- #####################################################################################################################
+CREATE TABLE IF NOT EXISTS stones (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    number INT UNSIGNED NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    rarity VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    seen BOOLEAN DEFAULT FALSE,
+    deleted BOOLEAN DEFAULT FALSE,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);

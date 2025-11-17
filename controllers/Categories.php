@@ -60,7 +60,7 @@ class Categories extends BaseController {
         $data = [
             'title' => LANG->categories->titles->index,
             'elements' => empty($filtered_elements) && empty($search) ? $elements : $filtered_elements,
-            'search' => ''
+            'search' => $search
         ];
 
         $this->view->render('templates/header', $data)
