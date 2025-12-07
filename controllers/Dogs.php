@@ -97,7 +97,15 @@ class Dogs extends BaseController {
      * @return void
      */
     public function show(int $id) :void {
-        // TODO
+        $data = [
+            'title' => LANG->dogs->titles->show,
+            'element' => $this->dog_model->select($id),
+            'users' => $this->user_model->select()
+        ];
+
+        $this->view->render('templates/header', $data)
+                   ->render('dogs/show', $data)
+                   ->render('templates/footer');
     }
 
     /**
