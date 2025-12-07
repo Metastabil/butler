@@ -21,6 +21,7 @@ navigation:
   users: 'Benutzer'
   stones: 'Steine'
   advent_calendar: 'Adventskalender'
+  dogs: 'Hunde'
 messages:
   success:
     save: 'Erfolgreich gespeichert'
@@ -48,6 +49,17 @@ categories:
     show: 'Kategorie anzeigen'
   attributes:
     name: 'Name'
+    created: 'Angelegt am'
+    updated: 'Aktualisiert am'
+dogs:
+  titles:
+    index: 'Hunde'
+    create: 'Hund anlegen'
+    update: 'Hund bearbeiten'
+    show: 'Hund anzeigen'
+  attributes:
+    name: 'Name'
+    owner: 'Besitzer'
     created: 'Angelegt am'
     updated: 'Aktualisiert am'
 recipes:

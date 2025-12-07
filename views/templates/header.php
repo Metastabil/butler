@@ -58,6 +58,15 @@
                     </a>
                 </div>
 
+                <div class="nav-wrapper">
+                    <a href="<?= base_url('dogs') ?>" title="<?= LANG->navigation->dogs ?>">
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-paw"></i>
+                    </span>
+                        <?= LANG->navigation->dogs ?>
+                    </a>
+                </div>
+
                 <?php if (is_administrator()) : ?>
                     <div class="nav-wrapper">
                         <a href="<?= base_url('users') ?>" title="<?= LANG->navigation->users ?>">

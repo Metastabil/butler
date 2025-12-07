@@ -211,7 +211,7 @@ main {
     width: 100%;
 }
 
-.default-form .input-wrapper input:disabled, .default-form .input-wrapper select:disabled {
+.default-form .input-wrapper input:disabled, .default-form .input-wrapper textarea:disabled, .default-form .input-wrapper select:disabled {
     background-color: var(--gray);
     color: var(--black);
 }

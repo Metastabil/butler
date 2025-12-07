@@ -14,6 +14,13 @@ $routes['show-category/:id'] = ['Categories', 'show'];
 $routes['update-category/:id'] = ['Categories', 'update'];
 $routes['delete-category/:id'] = ['Categories', 'delete'];
 
+// Dogs
+$routes['dogs'] = ['Dogs', 'index'];
+$routes['create-dog'] = ['Dogs', 'create'];
+$routes['show-dog/:id'] = ['Dogs', 'show'];
+$routes['update-dog/:id'] = ['Dogs',' update'];
+$routes['delete-dog/:id'] = ['Dogs', 'delete'];
+
 // Pages
 $routes['login'] = ['Pages', 'login'];
 $routes['logout'] = ['Pages', 'logout'];
