@@ -6,24 +6,28 @@ namespace App\Models;
  * @version 1.0.0
  */
 
-class DogModel extends BaseModel {
+class MedicalDogDataModel extends BaseModel {
     /**
      * @var string
      */
-    private string $folder = 'dogs';
+    private string $folder = 'medical-dog-data';
 
     /**
      * @param int $id
-     * @param int $user_id
+     * @param int $dog_id
      * @param bool $deleted
      * @return array
      */
-    public function select(int $id = 0, int $user_id = 0, bool $deleted = false) :array {
+    public function select(int $id = 0, int $dog_id = 0, bool $deleted = false) :array {
         $params['deleted'] = $deleted;
 
         if ($id > 0) {
             $query = $this->query($this->folder, 'select-by-id');
             $params['id'] = $id;
+        }
+        elseif ($dog_id > 0) {
+            $query = $this->query($this->folder, 'select-by-dog-id');
+            $params['dog_id'] = $dog_id;
         }
         else {
             $query = $this->query($this->folder, 'select');
@@ -34,7 +38,7 @@ class DogModel extends BaseModel {
 
         $result = $statement->fetchAll();
 
-        return !empty($statement) && $id > 0 ? $result[0] : $result;
+        return !empty($result) && $id > 0 ? $result[0] : $result;
     }
 
     /**

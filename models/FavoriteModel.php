@@ -14,11 +14,14 @@ class FavoriteModel extends BaseModel {
 
     /**
      * @param int $id
+     * @param int $user_id
      * @param bool $deleted
      * @return array
      */
-    public function select(int $id = 0, bool $deleted = false) :array {
+    public function select(int $id = 0, int $user_id = 0, bool $deleted = false) :array {
         // TODO
+
+        return [];
     }
 
     /**

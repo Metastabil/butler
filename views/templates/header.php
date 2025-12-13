@@ -30,6 +30,10 @@
                 <i class="fa-solid fa-bars"></i>
             </a>
 
+            <a href="<?= base_url('profile') ?>" id="profile">
+                <i class="fa-solid fa-user"></i>
+            </a>
+
             <nav>
                 <div class="nav-wrapper">
                     <a href="<?= base_url('recipes') ?>" title="<?= LANG->navigation->recipes ?>">

@@ -11,6 +11,13 @@ use JetBrains\PhpStorm\NoReturn;
 
 class {{className}} extends BaseController {
     /**
+     * Constructor
+     */
+    public function __construct() {
+        parent::__construct();
+    }
+
+    /**
      * @return void
      */
     public function index() :void {

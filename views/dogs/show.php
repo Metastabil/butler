@@ -1,41 +1,30 @@
 <?php
 /**
- * @var array $users
+ * @var array $medical_dog_data
  * @var array $element
  * @var string $title
+ * @var array $users
  */
 ?>
 
 <h1 class="title">
-    <?= $title ?>
+    <?= $element['name'] ?>
 </h1>
 
-<form action="javascript:void(0)" method="post" class="default-form">
-    <div class="input-wrapper">
-        <label for="name">
-            <?= LANG->dogs->attributes->name ?>
-            <span class="required">*</span>
-        </label>
+<h3 class="subtitle">
+    <?= LANG->dogs->titles->medical_dog_data ?>
+    <a href="<?= base_url('create-medical-dog-data/' . $element['id']) ?>" title="<?= LANG->actions->create ?>" class="btn btn-blue btn-create">
+        <i class="fa-solid fa-plus"></i>
+    </a>
+</h3>
 
-        <input type="text" name="name" id="name" placeholder="<?= LANG->dogs->attributes->name ?>" value="<?= $element['name'] ?>" disabled />
-    </div>
-
-    <div class="input-wrapper">
-        <label for="owner">
-            <?= LANG->dogs->attributes->owner ?>
-            <span class="required">*</span>
-        </label>
-
-        <select name="user-id" id="owner" disabled>
-            <?php foreach ($users as $u) : ?>
-                <option value="<?= $u['id'] ?>" <?= (int)$element['user_id'] === (int)$u['id'] ? 'selected' : '' ?>><?= $u['username'] ?></option>
-            <?php endforeach ?>
-        </select>
-    </div>
-
-    <div class="input-wrapper">
-        <a href="<?= base_url('dogs') ?>" title="<?= LANG->actions->back ?>" class="btn btn-blue">
-            <?= LANG->actions->back ?>
-        </a>
-    </div>
-</form>
+<div class="medical-dog-data-container">
+    <ul class="default-list">
+        <?php foreach ($medical_dog_data as $mda) : ?>
+            <li>
+                <?= $mda['name'] ?>
+                <?= !empty($mda['date']) ? '(' . format_timestamp($mda['date']) . ')' : '' ?>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</div>

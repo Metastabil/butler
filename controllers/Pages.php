@@ -2,7 +2,9 @@
 namespace App\Controllers;
 
 use JetBrains\PhpStorm\NoReturn;
+use App\Models\FavoriteModel;
 use App\Models\UserModel;
+use App\Models\DogModel;
 
 /**
  * @author Julius Derigs
@@ -11,9 +13,19 @@ use App\Models\UserModel;
 
 class Pages extends BaseController {
     /**
+     * @var FavoriteModel
+     */
+    private FavoriteModel $favorite_model;
+
+    /**
      * @var UserModel
      */
     private UserModel $user_model;
+
+    /**
+     * @var DogModel
+     */
+    private DogModel $dog_model;
 
     /**
      * Constructor
@@ -21,7 +33,9 @@ class Pages extends BaseController {
     public function __construct() {
         parent::__construct();
 
+        $this->favorite_model = new FavoriteModel();
         $this->user_model = new UserModel();
+        $this->dog_model = new DogModel();
     }
 
     /**
@@ -68,5 +82,25 @@ class Pages extends BaseController {
         unset($_SESSION['user']);
 
         redirect('login');
+    }
+
+    /**
+     * @return void
+     */
+    public function profile() :void {
+        redirect_if_not_authenticated();
+
+        $user_id = $_SESSION['user']['id'];
+
+        $data = [
+            'title' => LANG->pages->titles->profile,
+            'user' => $this->user_model->select($user_id),
+            'favorites' => $this->favorite_model->select(0, $user_id),
+            'dogs' => $this->dog_model->select(0, $user_id)
+        ];
+
+        $this->view->render('templates/header', $data)
+                   ->render('pages/profile', $data)
+                   ->render('templates/footer');
     }
 }

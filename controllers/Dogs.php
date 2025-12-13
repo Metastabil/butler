@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\MedicalDogDataModel;
 use JetBrains\PhpStorm\NoReturn;
 use App\Models\UserModel;
 use App\Models\DogModel;
@@ -12,7 +13,19 @@ use App\Models\DogModel;
  */
 
 class Dogs extends BaseController {
+    /**
+     * @var MedicalDogDataModel
+     */
+    private MedicalDogDataModel $medical_dog_data_model;
+
+    /**
+     * @var DogModel
+     */
     private DogModel $dog_model;
+
+    /**
+     * @var UserModel
+     */
     private UserModel $user_model;
 
     /**
@@ -21,6 +34,7 @@ class Dogs extends BaseController {
     public function __construct() {
         parent::__construct();
 
+        $this->medical_dog_data_model = new MedicalDogDataModel();
         $this->dog_model = new DogModel();
         $this->user_model = new UserModel();
     }
@@ -100,7 +114,8 @@ class Dogs extends BaseController {
         $data = [
             'title' => LANG->dogs->titles->show,
             'element' => $this->dog_model->select($id),
-            'users' => $this->user_model->select()
+            'users' => $this->user_model->select(),
+            'medical_dog_data' => $this->medical_dog_data_model->select(0, $id)
         ];
 
         $this->view->render('templates/header', $data)

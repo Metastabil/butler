@@ -41,6 +41,7 @@ pages:
   titles:
     login: 'Anmelden'
     history: 'Historie'
+    profile: 'Profil'
 categories:
   titles:
     index: 'Kategorien'
@@ -57,9 +58,22 @@ dogs:
     create: 'Hund anlegen'
     update: 'Hund bearbeiten'
     show: 'Hund anzeigen'
+    medical_dog_data: 'Med. Daten'
   attributes:
     name: 'Name'
     owner: 'Besitzer'
+    created: 'Angelegt am'
+    updated: 'Aktualisiert am'
+medical_dog_data:
+  titles:
+    create: 'Med. Daten anlegen'
+    update: 'Med Daten bearbeiten'
+    show: 'Med. Daten anzeigen'
+  attributes:
+    name: 'Kurzbeschreibung'
+    description: 'Beschreibung'
+    date: 'Datum'
+    dog: 'Hund'
     created: 'Angelegt am'
     updated: 'Aktualisiert am'
 recipes:

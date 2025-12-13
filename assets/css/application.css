@@ -34,6 +34,14 @@ header {
     padding: 8px;
 }
 
+#profile {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--black);
+    font-size: 25px;
+    padding: 8px;
+}
+
 nav {
     height: 95vh;
 }
@@ -270,6 +278,28 @@ main {
     outline: none;
     border: none;
     width: 100%;
+}
+
+/*
+ * #####################################################################################################################
+ * # Profile ###########################################################################################################
+ * #####################################################################################################################
+ */
+.profile-image {
+    background-color: var(--dark-blue);
+    transform: translateX(-50%);
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    display: flex;
+    width: 200px;
+    left: 50%;
+}
+
+.profile-image i {
+    font-size: 100px;
 }
 
 /*
