@@ -18,7 +18,7 @@ $routes['delete-category/:id'] = ['Categories', 'delete'];
 $routes['dogs'] = ['Dogs', 'index'];
 $routes['create-dog'] = ['Dogs', 'create'];
 $routes['show-dog/:id'] = ['Dogs', 'show'];
-$routes['update-dog/:id'] = ['Dogs',' update'];
+$routes['update-dog/:id'] = ['Dogs','update'];
 $routes['delete-dog/:id'] = ['Dogs', 'delete'];
 
 // Medical Dog Data

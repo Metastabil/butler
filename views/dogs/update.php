@@ -1,7 +1,8 @@
 <?php
 /**
- * @var Array $users
+ * @var array $element
  * @var string $title
+ * @var array $users
  */
 ?>
 
@@ -9,14 +10,14 @@
     <?= $title ?>
 </h1>
 
-<form action="<?= base_url('create-dog') ?>" method="post" class="default-form">
+<form action="<?= base_url('update-dog/' . $element['id']) ?>" method="post" class="default-form">
     <div class="input-wrapper">
         <label for="name">
             <?= LANG->dogs->attributes->name ?>
             <span class="required">*</span>
         </label>
 
-        <input type="text" name="name" id="name" placeholder="<?= LANG->dogs->attributes->name ?>" required />
+        <input type="text" name="name" id="name" placeholder="<?= LANG->dogs->attributes->name ?>" value="<?= $element['name'] ?>" required />
     </div>
 
     <div class="input-wrapper">
@@ -27,7 +28,7 @@
 
         <select name="user" id="owner" required>
             <?php foreach ($users as $u) : ?>
-                <option value="<?= $u['id'] ?>"><?= $u['username'] ?></option>
+                <option value="<?= $u['id'] ?>" <?= (int)$element['user_id'] === (int)$u['id'] ? 'selected' : '' ?>><?= $u['username'] ?></option>
             <?php endforeach ?>
         </select>
     </div>
