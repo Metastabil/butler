@@ -14,6 +14,13 @@ $routes['show-category/:id'] = ['Categories', 'show'];
 $routes['update-category/:id'] = ['Categories', 'update'];
 $routes['delete-category/:id'] = ['Categories', 'delete'];
 
+// Dog Annotation Types
+$routes['dog-annotation-types'] = ['DogAnnotationTypes', 'index'];
+$routes['create-dog-annotation-type'] = ['DogAnnotationTypes', 'create'];
+$routes['show-dog-annotation-type/:id'] = ['DogAnnotationTypes', 'show'];
+$routes['update-dog-annotation-type/:id'] = ['DogAnnotationTypes', 'update'];
+$routes['delete-dog-annotation-type/:id'] = ['DogAnnotationTypes', 'delete'];
+
 // Dogs
 $routes['dogs'] = ['Dogs', 'index'];
 $routes['create-dog'] = ['Dogs', 'create'];

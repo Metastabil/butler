@@ -3,7 +3,7 @@ namespace System\Classes;
 
 /**
  * @author Julius Derigs
- * @version 1.0.0
+ * @version 2.0.0
  */
 
 class View {
@@ -22,6 +22,26 @@ class View {
         include $viewPath;
 
         echo ob_get_clean();
+
+        return $this;
+    }
+
+    /**
+     * @param array $params
+     * @return $this
+     */
+    public function render_header(array $params = []) :self {
+        $this->render('templates/header', $params);
+
+        return $this;
+    }
+
+    /**
+     * @param array $params
+     * @return self
+     */
+    public function render_footer(array $params = []) :self {
+        $this->render('templates/footer', $params);
 
         return $this;
     }

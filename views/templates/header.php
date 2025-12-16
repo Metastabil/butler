@@ -73,6 +73,15 @@
 
                 <?php if (is_administrator()) : ?>
                     <div class="nav-wrapper">
+                        <a href="<?= base_url('dog-annotation-types') ?>" title="<?= LANG->navigation->dog_annotation_types ?>">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-asterisk"></i>
+                        </span>
+                            <?= LANG->navigation->dog_annotation_types ?>
+                        </a>
+                    </div>
+
+                    <div class="nav-wrapper">
                         <a href="<?= base_url('users') ?>" title="<?= LANG->navigation->users ?>">
                         <span class="nav-icon">
                             <i class="fa-solid fa-users"></i>

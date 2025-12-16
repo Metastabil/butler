@@ -22,6 +22,7 @@ navigation:
   stones: 'Steine'
   advent_calendar: 'Adventskalender'
   dogs: 'Hunde'
+  dog_annotation_types: 'Hunde-Anmerkungstypen'
 messages:
   success:
     save: 'Erfolgreich gespeichert'
@@ -48,6 +49,16 @@ categories:
     create: 'Kategorie anlegen'
     update: 'Kategorie bearbeiten'
     show: 'Kategorie anzeigen'
+  attributes:
+    name: 'Name'
+    created: 'Angelegt am'
+    updated: 'Aktualisiert am'
+dog_annotation_types:
+  titles:
+    index: 'Hunde-Anmerkungstypen'
+    create: 'Hunde-Anmerkungstyp anlegen'
+    update: 'Hunde-Anmerkungstyp bearbeiten'
+    show: 'Hunde-Anmerkungstyp anzeigen'
   attributes:
     name: 'Name'
     created: 'Angelegt am'
