@@ -63,9 +63,9 @@ class Categories extends BaseController {
             'search' => $search
         ];
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('categories/index', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -99,9 +99,9 @@ class Categories extends BaseController {
             redirect('categories');
         }
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('categories/create', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -114,9 +114,9 @@ class Categories extends BaseController {
             'element' => $this->category_model->select($id)
         ];
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('categories/show', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -152,9 +152,9 @@ class Categories extends BaseController {
             redirect('categories');
         }
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('categories/update', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**

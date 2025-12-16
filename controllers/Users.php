@@ -64,9 +64,9 @@ class Users extends BaseController {
             'search' => $search
         ];
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('users/index', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -103,9 +103,9 @@ class Users extends BaseController {
             redirect('users');
         }
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('users/create', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -119,9 +119,9 @@ class Users extends BaseController {
             'logs' => $this->log_model->select($this->table, $id)
         ];
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('users/show', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -163,9 +163,9 @@ class Users extends BaseController {
             redirect('users');
         }
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('users/update', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**

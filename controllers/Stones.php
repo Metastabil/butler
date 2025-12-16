@@ -52,9 +52,9 @@ class Stones extends BaseController {
             'search' => $search
         ];
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('stones/index', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     public function discover() :void {
@@ -79,9 +79,9 @@ class Stones extends BaseController {
             redirect('discover');
         }
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('stones/discover', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -117,9 +117,9 @@ class Stones extends BaseController {
             redirect('stones');
         }
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('stones/create', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -132,8 +132,8 @@ class Stones extends BaseController {
             'element' => $this->stone_model->select($id)
         ];
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('stones/show', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 }

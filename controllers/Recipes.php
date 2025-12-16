@@ -77,9 +77,9 @@ class Recipes extends BaseController {
             'search' => $search
         ];
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('recipes/index', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -142,9 +142,9 @@ class Recipes extends BaseController {
             redirect('recipes');
         }
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('recipes/create', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -158,9 +158,9 @@ class Recipes extends BaseController {
             'logs' => $this->log_model->select($this->table, $id)
         ];
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('recipes/show', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -238,9 +238,9 @@ class Recipes extends BaseController {
             redirect('recipes');
         }
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('recipes/update', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**

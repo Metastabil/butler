@@ -99,8 +99,8 @@ class Pages extends BaseController {
             'dogs' => $this->dog_model->select(0, $user_id)
         ];
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('pages/profile', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 }

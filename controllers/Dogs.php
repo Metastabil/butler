@@ -95,9 +95,9 @@ class Dogs extends BaseController {
             redirect('dogs');
         }
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('dogs/create', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -111,9 +111,9 @@ class Dogs extends BaseController {
             'users' => $this->user_model->select()
         ];
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('dogs/show', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
@@ -149,9 +149,9 @@ class Dogs extends BaseController {
             redirect('dogs');
         }
 
-        $this->view->render('templates/header', $data)
+        $this->view->render_header($data)
                    ->render('dogs/update', $data)
-                   ->render('templates/footer');
+                   ->render_footer();
     }
 
     /**
