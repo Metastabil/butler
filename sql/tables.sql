@@ -110,3 +110,18 @@ CREATE TABLE IF NOT EXISTS dog_annotations (
     FOREIGN KEY (dog_id) REFERENCES dogs (id),
     FOREIGN KEY (dog_annotation_type_id) REFERENCES dog_annotation_types (id)
 );
+
+-- #####################################################################################################################
+-- # Laptop 16.12.2025 #################################################################################################
+-- #####################################################################################################################
+CREATE TABLE IF NOT EXISTS dog_annotations (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    text TEXT NOT NULL,
+    dog_id INT UNSIGNED NOT NULL,
+    dog_annotation_type_id INT UNSIGNED NOT NULL,
+    deleted BOOLEAN DEFAULT FALSE,
+    created DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (dog_id) REFERENCES dogs (id),
+    FOREIGN KEY (dog_annotation_type_id) REFERENCES dog_annotation_types (id)
+);
