@@ -23,6 +23,8 @@ navigation:
   advent_calendar: 'Adventskalender'
   dogs: 'Hunde'
   dog_annotation_types: 'Hunde-Anmerkungstypen'
+  dog_annotations: 'Hundeanmerkungen'
+  administration: 'Administration'
 messages:
   success:
     save: 'Erfolgreich gespeichert'

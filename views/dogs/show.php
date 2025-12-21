@@ -59,11 +59,13 @@
         <?= $dat['name'] ?>
     </h3>
 
-    <?php foreach ($dog_annotations as $da) : ?>
-        <?php if ($dat['id'] === $da['dog_annotation_type_id']) : ?>
-            <?= $da['text'] ?>
-        <?php endif ?>
-    <?php endforeach ?>
+    <ul>
+        <?php foreach ($dog_annotations as $da) : ?>
+            <?php if ($dat['id'] === $da['dog_annotation_type_id']) : ?>
+                <li><?= $da['text'] ?></li>
+            <?php endif ?>
+        <?php endforeach ?>
+    </ul>
 <?php endforeach ?>
 
 <script>

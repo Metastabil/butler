@@ -72,12 +72,23 @@
                 </div>
 
                 <?php if (is_administrator()) : ?>
+                    <hr />
+
                     <div class="nav-wrapper">
                         <a href="<?= base_url('dog-annotation-types') ?>" title="<?= LANG->navigation->dog_annotation_types ?>">
                         <span class="nav-icon">
                             <i class="fa-solid fa-asterisk"></i>
                         </span>
                             <?= LANG->navigation->dog_annotation_types ?>
+                        </a>
+                    </div>
+
+                    <div class="nav-wrapper">
+                        <a href="<?= base_url('dog-annotations') ?>" title="<?= LANG->navigation->dog_annotations ?>">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-asterisk"></i>
+                        </span>
+                            <?= LANG->navigation->dog_annotations ?>
                         </a>
                     </div>
 
@@ -89,6 +100,8 @@
                             <?= LANG->navigation->users ?>
                         </a>
                     </div>
+
+                    <hr />
                 <?php endif ?>
 
                 <div class="nav-wrapper">

@@ -51,7 +51,7 @@ class DogAnnotations extends BaseController {
 
             if (!empty($search)) {
                 foreach ($elements as $e) {
-                    if (str_contains(strtolower($e['text']), strtolower($search))) {
+                    if (str_contains(strtolower($e['text']), strtolower($search)) || str_contains(strtolower($e['dog_name']), strtolower($search))) {
                         $filtered_elements[] = $e;
                     }
                 }
@@ -124,7 +124,8 @@ class DogAnnotations extends BaseController {
         $data = [
             'title' => LANG->dog_annotations->titles->show,
             'dog_annotation_types' => $this->dog_annotation_type_model->select(),
-            'dogs' => $this->dog_model->select()
+            'dogs' => $this->dog_model->select(),
+            'element' => $this->dog_annotation_model->select($id)
         ];
 
         $this->view->render_header($data)
