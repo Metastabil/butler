@@ -93,6 +93,15 @@
                     </div>
 
                     <div class="nav-wrapper">
+                        <a href="<?= base_url('modules') ?>" title="<?= LANG->navigation->modules ?>">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-ticket"></i>
+                        </span>
+                            <?= LANG->navigation->modules ?>
+                        </a>
+                    </div>
+
+                    <div class="nav-wrapper">
                         <a href="<?= base_url('users') ?>" title="<?= LANG->navigation->users ?>">
                         <span class="nav-icon">
                             <i class="fa-solid fa-users"></i>

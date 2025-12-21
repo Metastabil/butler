@@ -36,6 +36,13 @@ $routes['show-dog/:id'] = ['Dogs', 'show'];
 $routes['update-dog/:id'] = ['Dogs','update'];
 $routes['delete-dog/:id'] = ['Dogs', 'delete'];
 
+// Modules
+$routes['modules'] = ['Modules', 'index'];
+$routes['create-module'] = ['Modules', 'create'];
+$routes['show-module/:id'] = ['Modules', 'show'];
+$routes['update-module/:id'] = ['Modules', 'update'];
+$routes['delete-module/:id'] = ['Modules', 'delete'];
+
 // Medical Dog Data
 $routes['create-medical-dog-data/:dog_id'] = ['MedicalDogData', 'create'];
 $routes['show-medical-dog-data/:id'] = ['MedicalDogData', 'show'];

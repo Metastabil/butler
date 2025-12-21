@@ -25,6 +25,7 @@ navigation:
   dog_annotation_types: 'Hunde-Anmerkungstypen'
   dog_annotations: 'Hundeanmerkungen'
   administration: 'Administration'
+  modules: 'Module'
 messages:
   success:
     save: 'Erfolgreich gespeichert'
@@ -85,6 +86,16 @@ dogs:
   attributes:
     name: 'Name'
     owner: 'Besitzer'
+    created: 'Angelegt am'
+    updated: 'Aktualisiert am'
+modules:
+  titles:
+    index: 'Module'
+    create: 'Modul anlegen'
+    update: 'Modul bearbeiten'
+    show: 'Modul anzeigen'
+  attributes:
+    name: 'Bezeichnung'
     created: 'Angelegt am'
     updated: 'Aktualisiert am'
 medical_dog_data:
