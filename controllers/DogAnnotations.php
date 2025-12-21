@@ -42,10 +42,29 @@ class DogAnnotations extends BaseController {
      * @return void
      */
     public function index() :void {
+        $elements = $this->dog_annotation_model->select();
+        $filtered_elements = [];
+        $search = '';
+
+        if ($this->request->is('post')) {
+            $search = $this->request->get('search');
+
+            if (!empty($search)) {
+                foreach ($elements as $e) {
+                    if (str_contains(strtolower($e['text']), strtolower($search))) {
+                        $filtered_elements[] = $e;
+                    }
+                }
+            }
+        }
+
+
         $data = [
             'title' => LANG->dog_annotations->titles->index,
+            'elements' => empty($filtered_elements) && empty($search) ? $elements : $filtered_elements,
             'dog_annotation_types' => $this->dog_annotation_type_model->select(),
-            'dogs' => $this->dog_model->select()
+            'dogs' => $this->dog_model->select(),
+            'search' => $search
         ];
 
         $this->view->render_header($data)

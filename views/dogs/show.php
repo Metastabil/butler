@@ -1,5 +1,7 @@
 <?php
 /**
+ * @var array $dog_annotation_types
+ * @var array $dog_annotations
  * @var array $element
  * @var string $title
  * @var array $users
@@ -45,6 +47,24 @@
         </select>
     </div>
 </form>
+
+<?php foreach ($dog_annotation_types as $dat) : ?>
+    <hr />
+
+    <h3 class="subtitle">
+        <a href="<?= base_url('create-dog-annotation/' . $element['id']) ?>" class="btn btn-blue">
+            <i class="fa-solid fa-plus"></i>
+        </a>
+
+        <?= $dat['name'] ?>
+    </h3>
+
+    <?php foreach ($dog_annotations as $da) : ?>
+        <?php if ($dat['id'] === $da['dog_annotation_type_id']) : ?>
+            <?= $da['text'] ?>
+        <?php endif ?>
+    <?php endforeach ?>
+<?php endforeach ?>
 
 <script>
     function deleteDog(id) {

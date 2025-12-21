@@ -63,6 +63,16 @@ dog_annotation_types:
     name: 'Name'
     created: 'Angelegt am'
     updated: 'Aktualisiert am'
+dog_annotations:
+  titles:
+    index: 'Hundeanmerkungen'
+    create: 'Hundeanmerkung anlegen'
+    update: 'Hundeanmerkung bearbeiten'
+    show: 'Hundeanmerkung anzeigen'
+  attributes:
+    text: 'Text'
+    dog: 'Hund'
+    dog_annotation_type: 'Hunde-Anmerkungstyp'
 dogs:
   titles:
     index: 'Hunde'

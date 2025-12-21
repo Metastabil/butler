@@ -21,6 +21,14 @@ $routes['show-dog-annotation-type/:id'] = ['DogAnnotationTypes', 'show'];
 $routes['update-dog-annotation-type/:id'] = ['DogAnnotationTypes', 'update'];
 $routes['delete-dog-annotation-type/:id'] = ['DogAnnotationTypes', 'delete'];
 
+// Dog Annotations
+$routes['dog-annotations'] = ['DogAnnotations', 'index'];
+$routes['create-dog-annotation'] = ['DogAnnotations', 'create'];
+$routes['create-dog-annotation/:id'] = ['DogAnnotations', 'create'];
+$routes['show-dog-annotation/:id'] = ['DogAnnotations', 'show'];
+$routes['update-dog-annotation/:id'] = ['DogAnnotations', 'update'];
+$routes['delete-dog-annotation/:id'] = ['DogAnnotations', 'delete'];
+
 // Dogs
 $routes['dogs'] = ['Dogs', 'index'];
 $routes['create-dog'] = ['Dogs', 'create'];

@@ -1,9 +1,11 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\DogAnnotationTypeModel;
+use App\Models\DogAnnotationModel;
+use JetBrains\PhpStorm\NoReturn;
 use App\Models\UserModel;
 use App\Models\DogModel;
-use JetBrains\PhpStorm\NoReturn;
 
 /**
  * @author Julius Derigs
@@ -11,6 +13,16 @@ use JetBrains\PhpStorm\NoReturn;
  */
 
 class Dogs extends BaseController {
+    /**
+     * @var DogAnnotationTypeModel
+     */
+    private DogAnnotationTypeModel $dog_annotation_type_model;
+
+    /**
+     * @var DogAnnotationModel
+     */
+    private DogAnnotationModel $dog_annotation_model;
+
     /**
      * @var UserModel
      */
@@ -29,6 +41,8 @@ class Dogs extends BaseController {
 
         redirect_if_not_authenticated();
 
+        $this->dog_annotation_type_model = new DogAnnotationTypeModel();
+        $this->dog_annotation_model = new DogAnnotationModel();
         $this->user_model = new UserModel();
         $this->dog_model = new DogModel();
     }
@@ -108,7 +122,9 @@ class Dogs extends BaseController {
         $data = [
             'title' => LANG->dogs->titles->show,
             'element' => $this->dog_model->select($id),
-            'users' => $this->user_model->select()
+            'users' => $this->user_model->select(),
+            'dog_annotations' => $this->dog_annotation_model->select(0, $id),
+            'dog_annotation_types' => $this->dog_annotation_type_model->select()
         ];
 
         $this->view->render_header($data)

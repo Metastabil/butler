@@ -4,4 +4,7 @@ SELECT id,
        created,
        updated
 FROM dog_annotation_types
-WHERE deleted = :deleted;
+WHERE deleted = :deleted
+ORDER BY name;
+
+
